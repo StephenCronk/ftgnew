@@ -1,7 +1,7 @@
 /* Sticky header on every page. On Home (headerOverlay) it floats over the video hero and turns solid on scroll. */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: var(--navy); color: #fff;
+  background: var(--ink); color: #fff;
   transition: background-color .35s var(--ease), box-shadow .35s var(--ease);
 }
 .site-header.is-scrolled { box-shadow: 0 6px 24px rgba(0, 20, 36, .35); }
@@ -30,11 +30,11 @@
   background: var(--light); color: var(--navy); font-size: 13px; line-height: 1; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 700;
   transition: background-color .2s, transform .2s var(--ease), box-shadow .2s;
 }
-.btn-donate:hover { background: var(--cyan); color: var(--navy-deep); transform: translateY(-1px); box-shadow: 0 8px 20px -8px rgba(0, 175, 209, .8); }
+.btn-donate:hover { background: var(--cyan); color: var(--navy-deep); transform: translateY(-1px); box-shadow: 0 8px 20px -8px rgba(127, 212, 228, .6); }
 
 /* Home: transparent over the hero until scrolled or the menu is open. */
 .site-header--overlay { position: fixed; left: 0; right: 0; background: linear-gradient(to bottom, rgba(0, 28, 48, .55), rgba(0, 28, 48, 0)); }
-.site-header--overlay.is-scrolled, .site-header--overlay.is-open { background-color: var(--navy); }
+.site-header--overlay.is-scrolled, .site-header--overlay.is-open { background-color: var(--ink); }
 
 @media (max-width: 1240px) {
   .site-nav__link { padding: 8px 7px; letter-spacing: 1.2px; }

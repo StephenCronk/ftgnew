@@ -6,7 +6,7 @@
 .gap__anim img { width: 270px; height: auto; }
 .gap__heading { font-family: var(--font-roboto); font-weight: 400; font-size: 72px; color: var(--navy); margin: 0 0 20px; }
 .gap__sub { font-size: 24px; font-weight: 400; line-height: 1.25; color: var(--navy); margin: 0; text-transform: none; }
-.gap__cyan { color: var(--cyan); }
+.gap__cyan { color: var(--cyan-dark); }
 
 .elig { padding: 60px 0 20px; }
 .elig__cols { display: flex; align-items: center; }
@@ -32,7 +32,7 @@
 .services__img img { border-radius: 40px; box-shadow: 15px 15px 45px 0 rgba(0,0,0,.5); width: 100%; }
 
 .emergency { position: relative; background-size: cover; background-position: center; padding: 40px 0 30px; text-align: center; }
-.emergency::before { content: ""; position: absolute; inset: 0; background: var(--navy); opacity: .7; }
+.emergency::before { content: ""; position: absolute; inset: 0; background: var(--ink); opacity: .7; }
 .emergency .container { position: relative; }
 .emergency__heading { font-family: var(--font-slab); font-weight: 700; font-size: 35px; line-height: 1.2; text-transform: none; color: var(--light); padding: 0 70px; margin: 0 0 20px; }
 .emergency__text { color: var(--light); font-size: 20px; line-height: 1.7; margin: 0; padding: 0 50px; }

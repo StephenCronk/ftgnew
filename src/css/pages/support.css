@@ -16,15 +16,15 @@
 .help__row + .help__row { margin-top: 10px; }
 .help__buttons { display: flex; justify-content: center; gap: 24px; padding: 100px 0 60px; flex-wrap: wrap; }
 
-.impact { background: var(--cyan); }
+.impact { background: var(--cyan-soft); }
 .impact__head { text-align: center; padding: 0; }
 .impact__title { margin: 0; font-size: 59px; color: var(--navy); font-weight: 400; display: inline-flex; align-items: baseline; gap: 14px; padding: 10px 0; text-transform: none; }
 .impact__hl { position: relative; display: inline-block; padding: 10px; }
 .impact__hl span { position: relative; z-index: 2; }
-.impact__hl svg { position: absolute; left: 0; bottom: -4px; width: 100%; height: 90%; z-index: 1; fill: none; stroke: var(--light); stroke-width: 10px; }
-.impact__body { background: var(--cyan) url('../../assets/img/teethBkg.webp') center / auto repeat; padding-bottom: 60px; }
+.impact__hl svg { position: absolute; left: 0; bottom: -4px; width: 100%; height: 90%; z-index: 1; fill: none; stroke: var(--cyan); stroke-width: 10px; }
+.impact__body { background: var(--cyan-soft) url('../../assets/img/teethBkg-soft.webp') center / auto repeat; padding-bottom: 60px; }
 
-.who { background: var(--navy); padding-bottom: 100px; }
+.who { background: var(--ink); padding-bottom: 100px; }
 .who__heading { color: #6ec1e4; font-size: 72px; font-weight: 400; margin: 0 0 20px; padding: 100px 0 0; }
 .who__sub { color: var(--cyan); font-size: 24px; font-weight: 400; margin: 24px 0 20px; }
 .who__note { font-size: 20px; color: var(--light); }
@@ -36,7 +36,7 @@
 .sponsors { padding: 0 0 60px; }
 .sponsors .carousel + .carousel { margin-top: 20px; }
 
-.access { background: var(--navy); padding: 0 0 50px; }
+.access { background: var(--ink); padding: 0 0 50px; }
 .access__heading { color: var(--cyan); font-size: 72px; font-weight: 400; padding: 100px 0 0; margin: 0 0 30px; }
 .access__cols { display: flex; align-items: flex-start; gap: 20px; }
 .access__img, .access__toggle { flex: 0 0 calc(50% - 10px); }

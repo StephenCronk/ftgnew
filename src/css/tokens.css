@@ -1,18 +1,29 @@
 :root {
+  /* Brand navy: headings, text and buttons on light backgrounds. */
   --navy: #00406a;
-  --cyan: #00afd1;
+  /* Deep ink for dark section backgrounds. */
+  --ink: #0f2f47;
+  /* Soft teal: accents on dark backgrounds, and buttons with dark text. */
+  --cyan: #7fd4e4;
+  /* Text colour on dark backgrounds. */
   --light: #e4e7ed;
+  /* Light section backgrounds. */
+  --surface: #ffffff;
+  --surface-tint: #f3f7fa;
+  /* Pale teal for the few blocks that used to be solid cyan. */
+  --cyan-soft: #e2f3f7;
   --blue-mid: #005e9d;
   --white: #ffffff;
   --black: #000000;
   --grey-text: #4b4f58;
-  --grey-bg: #f6f7f8;
+  --grey-bg: #f3f7fa;
   --card-grey: #f1f1f1;
   --footer-text: #2c4961;
   --cookie: #002c44;
   --slate: #54595f;
   --navy-deep: #002c44;
-  --cyan-dark: #008daa;
+  /* Deep teal: links, icons and buttons on light backgrounds (4.9:1 on white). */
+  --cyan-dark: #0e7c93;
 
   --font-body: 'Quicksand', sans-serif;
   --font-slab: 'Arvo', serif;

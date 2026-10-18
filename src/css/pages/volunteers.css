@@ -29,7 +29,7 @@
 .imgbox__title { color: var(--navy); font-size: 32px; margin: 0 0 20px; }
 
 .quote-banner { position: relative; background-size: cover; background-position: center; }
-.quote-banner::before { content: ""; position: absolute; inset: 0; background: var(--navy); opacity: .45; }
+.quote-banner::before { content: ""; position: absolute; inset: 0; background: var(--ink); opacity: .45; }
 .quote-banner .container { position: relative; }
 .quote-banner__text { margin: 0; padding: 50px; color: var(--light); font-size: 30px; line-height: 1.5; max-width: 1100px; }
 
