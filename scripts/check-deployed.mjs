@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 // Check a deployed copy of the site: every page loads, every internal link/asset loads,
 // and the noindex tag is present on the dev preview and absent on the live site.
-// Usage: node scripts/check-deployed.mjs preview     (https://stephencronk.github.io/ftgnew)
+// Usage: node scripts/check-deployed.mjs preview     (https://meticulousmelon.lol)
 //        node scripts/check-deployed.mjs live        (https://fillingthegap.ca)
 //        node scripts/check-deployed.mjs <base-url>
 const TARGETS = {
-  preview: 'https://stephencronk.github.io/ftgnew',
+  preview: 'https://meticulousmelon.lol',
   live: 'https://fillingthegap.ca',
 };
 const arg = process.argv[2] || 'preview';
 const base = (TARGETS[arg] || arg).replace(/\/$/, '');
 const origin = new URL(base).origin;
-const expectNoindex = base.includes('github.io');
+const expectNoindex = base !== TARGETS.live;
 
 const PAGES = ['/', '/about/', '/elementor-1654/', '/volunteers/', '/patient-resources/', '/contact/',
   '/elementor-4058/', '/home/meet-our-team/', '/publication-1/', '/publication-2/', '/publication-3/', '/publication-4/'];

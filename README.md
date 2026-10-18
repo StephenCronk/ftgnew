@@ -40,7 +40,7 @@ Originals for images live in `src/assets/img-src/` (git-ignored). Drop a new ori
 
 There are two environments.
 
-- **Dev preview: GitHub Pages.** Every push to `main` runs `.github/workflows/pages.yml` and updates `https://stephencronk.github.io/ftgnew/`. The preview build sets `NOINDEX=1`, so every page carries a `noindex` tag and stays out of search engines.
+- **Dev preview: GitHub Pages.** Every push to `main` runs `.github/workflows/pages.yml` and updates `https://meticulousmelon.lol/` (custom domain set in the repo's Pages settings; `stephencronk.github.io/ftgnew/` redirects there, and the build picks up the root path automatically). The preview build sets `NOINDEX=1`, so every page carries a `noindex` tag and stays out of search engines.
 - **Live site: Hostinger.** `.github/workflows/deploy-hostinger.yml` only runs when started by hand from the Actions tab. It builds for the root domain, adds `deploy/hostinger/.htaccess`, checks the build, and syncs `_site/` to `public_html/` over FTPS. It only uploads changed files and deletes files it previously uploaded that no longer exist.
 
 The Hostinger workflow needs three repository secrets: `FTP_SERVER`, `FTP_USERNAME` and `FTP_PASSWORD`. The run option is:

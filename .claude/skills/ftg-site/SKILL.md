@@ -5,7 +5,7 @@ description: Change, check, preview and publish the Filling the Gap Dental Outre
 
 # Filling the Gap site: change, check, preview, publish
 
-The site is a static Eleventy build. The dev preview is GitHub Pages (`https://stephencronk.github.io/ftgnew/`), which updates on every push to `main`. The live site is fillingthegap.ca on Hostinger, which updates only when the "Deploy to Hostinger (live site)" workflow is run.
+The site is a static Eleventy build. The dev preview is GitHub Pages on the custom domain `https://meticulousmelon.lol/` (the old `stephencronk.github.io/ftgnew/` address redirects there), which updates on every push to `main`. The live site is fillingthegap.ca on Hostinger, which updates only when the "Deploy to Hostinger (live site)" workflow is run.
 
 ```
 edit  ->  npm run audit  ->  screenshots  ->  commit + push  ->  npm run check:preview
@@ -71,7 +71,7 @@ gh run watch "$(gh run list --workflow pages.yml --limit 1 --json databaseId -q 
 npm run check:preview
 ```
 
-Tell the user what changed and give them `https://stephencronk.github.io/ftgnew/` to review.
+Tell the user what changed and give them `https://meticulousmelon.lol/` to review.
 
 ## 5. Publish to the live site (only when asked)
 
