@@ -54,7 +54,7 @@
 
 /* ---- Animated round logo ----
    Without JS or with reduced motion it is simply the finished logo. home.js adds .is-armed (every part hidden)
-   and then .is-playing once the whole logo is on screen (and again every 60 s); each animation starts from its own first frame. Brand colours stay fixed under all themes. */
+   and then .is-playing once the whole logo is on screen (and again every 30 s); each animation starts from its own first frame. Brand colours stay fixed under all themes. */
 .logo-anim { --lw: #fff; --lc: #00aed0; overflow: visible; }
 .logo-anim .la-white, .logo-anim .la-head--white, .logo-anim .la-top { fill: var(--lw); stroke: var(--lw); }
 .logo-anim .la-arcs, .logo-anim .la-heart, .logo-anim .la-body, .logo-anim .la-head--cyan, .logo-anim .la-bottom { fill: var(--lc); stroke: var(--lc); }

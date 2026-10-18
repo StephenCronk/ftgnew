@@ -32,7 +32,7 @@
     });
   }
 
-  // Mission logo: builds itself when the whole logo is on screen, then again every 60 seconds.
+  // Mission logo: builds itself when the whole logo is on screen, then again every 30 seconds.
   // A replay that falls due while the logo is out of view waits until it is fully back.
   var logo = document.querySelector('[data-logo-anim]');
   if (logo && !reduce && hasIO) {
@@ -42,7 +42,7 @@
       logo.classList.remove('is-playing');
       logo.getBoundingClientRect(); // restart the CSS animations
       logo.classList.add('is-playing');
-      setTimeout(function () { due = true; if (inView) playLogo(); }, 60000);
+      setTimeout(function () { due = true; if (inView) playLogo(); }, 30000);
     }
     logo.classList.add('is-armed');
     new IntersectionObserver(function (entries) {
