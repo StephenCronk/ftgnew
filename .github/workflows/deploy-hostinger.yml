@@ -73,7 +73,7 @@ jobs:
         # Ask the Hostinger server directly (FTP and web share an IP), so the CDN cache can't hide a bad upload.
         run: |
           html=$(curl -sk --max-time 30 --resolve "fillingthegap.ca:443:${{ secrets.FTP_SERVER }}" "https://fillingthegap.ca/")
-          if ! grep -q '<title>Home - FillingTheGapDentalOutreach</title>' <<<"$html"; then
+          if ! grep -q '<title>Filling the Gap Dental Outreach | ' <<<"$html"; then
             echo "::error::fillingthegap.ca/ is not serving the new homepage. The files may have landed in the wrong folder."
             exit 1
           fi

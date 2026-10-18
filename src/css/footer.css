@@ -31,7 +31,7 @@
 .cookie-bar p { margin: 0; }
 .cookie-bar a { color: var(--cyan); text-decoration: underline; }
 .cookie-bar__accept {
-  border: 0; border-radius: 30px; padding: 6px 18px; background: var(--cyan); color: var(--navy);
+  border: 0; border-radius: 30px; padding: 6px 18px; background: var(--cyan); color: var(--navy-deep);
   font-size: 15px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500;
 }
 @media (max-width: 921px) {

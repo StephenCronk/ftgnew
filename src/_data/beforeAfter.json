@@ -14,21 +14,6 @@
       "before": "image2-e1687450492258.webp",
       "after": "image1.webp",
       "hideTablet": false
-    },
-    {
-      "before": "before2-e1692208264419.webp",
-      "after": "after2-e1692208275864.webp",
-      "hideTablet": false
-    },
-    {
-      "before": "before5-e1687450545249.webp",
-      "after": "after4.webp",
-      "hideTablet": true
-    },
-    {
-      "before": "20230516_141207-scaled-e1692208248360.webp",
-      "after": "after3.webp",
-      "hideTablet": true
     }
   ]
 }

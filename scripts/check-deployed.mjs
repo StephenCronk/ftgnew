@@ -33,7 +33,7 @@ for (const p of PAGES) {
   if (expectNoindex && !hasNoindex) bad.push(`${p}: missing noindex tag on the preview`);
   if (!expectNoindex && hasNoindex) bad.push(`${p}: noindex tag on the live site`);
   if (/casino/i.test(html)) bad.push(`${p}: contains spam text`);
-  if (!/<title>[^<]*FillingTheGapDentalOutreach<\/title>/.test(html)) bad.push(`${p}: unexpected page (old WordPress still cached?)`);
+  if (!/<title>[^<]*Filling the Gap Dental Outreach[^<]*<\/title>/.test(html)) bad.push(`${p}: unexpected page (old WordPress still cached?)`);
   for (const m of html.matchAll(/(?:href|src)="(\/[^"#]*)/g)) if (!m[1].startsWith('//')) assets.add(origin + m[1]);
 }
 const list = [...assets];

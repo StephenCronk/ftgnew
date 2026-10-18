@@ -6,7 +6,8 @@
     "address": "4158 Sheppard Ave E, Scarborough, ON M1S 1T3",
     "email": "urbandental@ccrihc.org",
     "phone": "416-289-4349",
-    "hours": ["Mon-Fri 9AM - 2PM"]
+    "hours": ["Mon-Fri 9AM - 2PM"],
+    "openingHours": ["Mo-Fr 09:00-14:00"]
   },
   {
     "id": "rexdale",
@@ -15,6 +16,7 @@
     "address": "21 Panorama Court, Toronto, ON M9V 4E3",
     "email": "rexdale@fillingthegap.ca",
     "phone": "416-748-4689",
-    "hours": ["Tues, Thurs 4-8PM", "Sat 9AM-1PM"]
+    "hours": ["Tues, Thurs 4-8PM", "Sat 9AM-1PM"],
+    "openingHours": ["Tu,Th 16:00-20:00", "Sa 09:00-13:00"]
   }
 ]

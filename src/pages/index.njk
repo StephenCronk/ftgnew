@@ -1,6 +1,8 @@
 ---
 layout: layouts/base.njk
 title: Home
+fullTitle: "Filling the Gap Dental Outreach | Affordable Urgent Dental Care in Toronto"
+schema: true
 permalink: /
 pageId: home
 pageCss: home
@@ -16,12 +18,12 @@ headerOverlay: true
   </div>
   <div class="vhero__overlay" aria-hidden="true"></div>
   <div class="vhero__content">
-    <h1 class="vhero__title rise" id="vhero-title" style="--d:60ms">Providing Dental Care for Canadians Without Coverage</h1>
+    <h1 class="vhero__title" id="vhero-title">Providing Dental Care for Canadians Without Coverage</h1>
     <p class="vhero__lede rise" style="--d:180ms">Our Mission Is To Provide Affordable Dental Care To Torontonians With Nowhere Else To Turn</p>
     <div class="vhero__actions rise" style="--d:300ms">
       <a class="pill pill--cyan" href="{{ nav.donate.href | url }}">Donate</a>
       <a class="pill pill--ghost" href="{{ '/volunteers/' | url }}">Volunteer</a>
-      <a class="pill pill--ghost" href="#cdcphome">Are You Eligible?</a>
+      <a class="pill pill--ghost" href="{{ '/patient-resources/' | url }}">Need Care?</a>
     </div>
     <div class="vhero__impact rise" style="--d:420ms">
       <p class="vhero__eyebrow">Our 2025 Impact</p>
@@ -46,7 +48,34 @@ headerOverlay: true
   </div>
 </section>
 
-<section class="band band--light lives">
+<section class="band band--light steps" aria-labelledby="steps-title">
+  <div class="container">
+    <header class="band__head" data-reveal>
+      <h2 class="band__title" id="steps-title">How To Get Care</h2>
+    </header>
+    <ol class="steps__list">
+      <li class="steps__item" data-reveal>
+        <span class="steps__num" aria-hidden="true">1</span>
+        <h3 class="steps__title">Check you qualify</h3>
+        <p>Patients must not be enrolled in any private or public benefits or insurance plans, and must be below the low-income threshold.</p>
+        <a class="steps__link" href="{{ '/patient-resources/' | url }}">Services &amp; Eligibility</a>
+      </li>
+      <li class="steps__item" data-reveal>
+        <span class="steps__num" aria-hidden="true">2</span>
+        <h3 class="steps__title">Email us to start screening</h3>
+        <p>Please send us an email to begin the screening process. Messages are returned during clinic hours <strong>only</strong>.</p>
+        <a class="steps__link" href="{{ '/contact/#forpatientsvolunteers' | url }}">Contact Us</a>
+      </li>
+      <li class="steps__item" data-reveal>
+        <span class="steps__num" aria-hidden="true">3</span>
+        <h3 class="steps__title">Get approved, then book</h3>
+        <p>All patients must be approved before any appointments are scheduled.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="band band--navy lives">
   <div class="container">
     <header class="band__head" data-reveal>
       <h2 class="band__title">How Our Volunteers Change Lives</h2>
@@ -64,22 +93,25 @@ headerOverlay: true
   </div>
 </section>
 
-<section class="band band--navy news">
+<section class="band band--light news">
   <div class="container">
     <header class="band__head" data-reveal>
       <h2 class="band__title">Featured news in dentistry</h2>
     </header>
-    <div class="tabs news__tabs" data-tabs data-reveal>
-      <div class="tabs__list" role="tablist" aria-label="Featured news">
-        {%- for n in news %}
-        <button class="tabs__tab{% if loop.first %} is-active{% endif %}" type="button" role="tab" id="news-tab-{{ loop.index }}" aria-controls="news-panel-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}">{{ n.title | safe }}</button>
-        {%- endfor %}
-      </div>
-      <div class="tabs__panels">
-        {%- for n in news %}
-        <div class="tabs__panel{% if loop.first %} is-active{% endif %}" role="tabpanel" id="news-panel-{{ loop.index }}" aria-labelledby="news-tab-{{ loop.index }}"{% if not loop.first %} hidden{% endif %}>{{ n.content | html | safe }}</div>
-        {%- endfor %}
-      </div>
+    <div class="news__grid">
+      {%- for n in news %}
+      <article class="news-card" data-reveal>
+        <a class="news-card__link" href="{{ n.url }}" target="_blank" rel="noopener">
+          <img class="news-card__img" src="{{ ('/assets/img/' + n.image) | url }}" alt="{{ n.alt }}" width="{{ n.width }}" height="{{ n.height }}" loading="lazy">
+          <div class="news-card__body">
+            <p class="news-card__meta"><span class="news-card__source">{{ n.source }}</span> <time datetime="{{ n.datetime }}">{{ n.date }}</time></p>
+            <h3 class="news-card__title">{{ n.title }}</h3>
+            <p class="news-card__summary">{{ n.summary }}</p>
+            <span class="news-card__more">Read more…</span>
+          </div>
+        </a>
+      </article>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -148,5 +180,30 @@ headerOverlay: true
       <h2 class="promo__title">Annual<br>Report</h2>
       <span class="promo__go" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M13.2 5.3 19.9 12l-6.7 6.7-1.4-1.4 4.3-4.3H4v-2h12.1l-4.3-4.3z"/></svg></span>
     </a>
+  </div>
+</section>
+
+<section class="band help-cta" aria-labelledby="help-title">
+  <div class="container">
+    <header class="band__head" data-reveal>
+      <h2 class="band__title" id="help-title">How Can You Help?</h2>
+    </header>
+    <div class="help-cta__grid">
+      <a class="help-cta__card" href="{{ nav.donate.href | url }}" data-reveal>
+        <span class="help-cta__icon"><svg viewBox="0 0 288 512" aria-hidden="true"><path fill="currentColor" d="M209.2 233.4l-108-31.6C88.7 198.2 80 186.5 80 173.5c0-16.3 13.2-29.5 29.5-29.5h66.3c12.2 0 24.2 3.7 34.2 10.5 6.1 4.1 14.3 3.1 19.5-2l34.8-34c7.1-6.9 6.1-18.4-1.8-24.5C238 74.8 207.4 64.1 176 64V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48h-2.5C45.8 64-5.4 118.7.5 183.6c4.2 46.1 39.4 83.6 83.8 96.6l102.5 30c12.5 3.7 21.2 15.3 21.2 28.3 0 16.3-13.2 29.5-29.5 29.5h-66.3C100 368 88 364.3 78 357.5c-6.1-4.1-14.3-3.1-19.5 2l-34.8 34c-7.1 6.9-6.1 18.4 1.8 24.5 24.5 19.2 55.1 29.9 86.5 30v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-48.2c46.6-.9 90.3-28.6 105.7-72.7 21.5-61.6-14.6-124.8-72.5-141.7z"/></svg></span>
+        <p>Monetary contributions go towards staff, outreach, supplies, and many other necessities to running our clinics.</p>
+        <span class="help-cta__go">Donate</span>
+      </a>
+      <a class="help-cta__card" href="{{ '/volunteers/' | url }}" data-reveal>
+        <span class="help-cta__icon"><svg viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M443.98 96.25c-11.01-45.22-47.11-82.06-92.01-93.72-32.19-8.36-63 5.1-89.14 24.33-3.25 2.39-6.96 3.73-10.5 5.48l28.32 18.21c7.42 4.77 9.58 14.67 4.8 22.11-4.46 6.95-14.27 9.86-22.11 4.8L162.83 12.84c-20.7-10.85-43.38-16.4-66.81-10.31-44.9 11.67-81 48.5-92.01 93.72-10.13 41.62-.42 80.81 21.5 110.43 23.36 31.57 32.68 68.66 36.29 107.35 4.4 47.16 10.33 94.16 20.94 140.32l7.8 33.95c3.19 13.87 15.49 23.7 29.67 23.7 13.97 0 26.15-9.55 29.54-23.16l34.47-138.42c4.56-18.32 20.96-31.16 39.76-31.16s35.2 12.85 39.76 31.16l34.47 138.42c3.39 13.61 15.57 23.16 29.54 23.16 14.18 0 26.48-9.83 29.67-23.7l7.8-33.95c10.61-46.15 16.53-93.16 20.94-140.32 3.61-38.7 12.93-75.78 36.29-107.35 21.95-29.61 31.66-68.8 21.53-110.43z"/></svg></span>
+        <p>If you are a dentist or hygienist in Ontario, please consider volunteering just four hours a month with us.</p>
+        <span class="help-cta__go">Volunteer</span>
+      </a>
+      <a class="help-cta__card" href="{{ nav.donate.href | url }}" data-reveal>
+        <span class="help-cta__icon"><svg viewBox="0 0 640 512" aria-hidden="true"><path fill="currentColor" d="M50.2 375.6c2.3 8.5 11.1 13.6 19.6 11.3l216.4-58c8.5-2.3 13.6-11.1 11.3-19.6l-49.7-185.5c-2.3-8.5-11.1-13.6-19.6-11.3L151 133.3l24.8 92.7-61.8 16.5-24.8-92.7-77.3 20.7C3.4 172.8-1.7 181.6.6 190.1l49.6 185.5zM384 0c-17.7 0-32 14.3-32 32v323.6L5.9 450c-4.3 1.2-6.8 5.6-5.6 9.8l12.6 46.3c1.2 4.3 5.6 6.8 9.8 5.6l393.7-107.4C418.8 464.1 467.6 512 528 512c61.9 0 112-50.1 112-112V0H384zm144 448c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"/></svg></span>
+        <p>Much of our equipment and supplies are donated. We welcome any donated equipment in working condition.</p>
+        <span class="help-cta__go">Contact Us</span>
+      </a>
+    </div>
   </div>
 </section>

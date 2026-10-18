@@ -28,6 +28,7 @@ button { font: inherit; cursor: pointer; }
 .visually-hidden, .skip-link:not(:focus) {
   position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
 }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
 .skip-link:focus { position: fixed; top: 8px; left: 8px; z-index: 1000; padding: 8px 16px; background: #fff; color: var(--navy); }
 
 /* Layout primitives */

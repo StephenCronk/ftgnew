@@ -2,7 +2,7 @@
   <div class="site-footer__strip"></div>
   <div class="site-footer__inner">
     <nav class="footer-col footer-nav" aria-label="Footer Navigation">
-      <h6 class="footer-col__title">Quick Links</h6>
+      <h2 class="footer-col__title">Quick Links</h2>
       <ul>
         {% for item in nav.footer %}
         <li><a href="{{ item.href | url }}">{{ item.label }}</a></li>
@@ -11,7 +11,7 @@
     </nav>
     {% for loc in locations %}
     <div class="footer-col footer-location">
-      <h6 class="footer-col__title">{{ loc.name }}</h6>
+      <h2 class="footer-col__title">{{ loc.name }}</h2>
       <ul class="footer-info">
         <li>
           <svg class="footer-info__icon" viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M172.3 501.7C27 291 0 269.4 0 192 0 86 86 0 192 0s192 86 192 192c0 77.4-27 99-172.3 309.7a24 24 0 0 1-39.4 0zM192 272a80 80 0 1 0 0-160 80 80 0 0 0 0 160z"/></svg>
