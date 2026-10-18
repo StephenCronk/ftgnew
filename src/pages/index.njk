@@ -34,14 +34,26 @@ arvoBold: true
 <section class="mission container">
   <div class="mission__logo"><img src="{{ '/assets/img/ftg-roundlogo.webp' | url }}" alt="" width="360" height="360"></div>
   <div class="mission__text">
-    <p>We are a non-profit organization that uses existing community dental clinics in locations across the city to provide affordable urgent dental treatment to low-income adults and others facing barriers to care. Services are generously provided by volunteer dentists and hygienists.</p>
+    <p><strong class="mission__label">Our Mission:</strong> We are a non-profit organization that uses existing community dental clinics in locations across the city to provide affordable urgent dental treatment to low-income adults and others facing barriers to care. Services are generously provided by volunteer dentists and hygienists.</p>
   </div>
 </section>
 
-<section class="audience container hide-tablet">
-  <a class="card" href="{{ '/volunteers/' | url }}" style="background-image:url('{{ '/assets/img/card-volunteer.webp' | url }}')"><h3 class="card__title">Volunteer</h3></a>
-  <a class="card" href="{{ '/patient-resources/' | url }}" style="background-image:url('{{ '/assets/img/card-patients.webp' | url }}')"><h3 class="card__title">Patients</h3></a>
-  <a class="card" href="{{ '/elementor-1654/' | url }}" style="background-image:url('{{ '/assets/img/card-donate.webp' | url }}')"><h3 class="card__title">Donate</h3></a>
+
+<section class="section lives">
+  <div class="container">
+    <h2 class="lives__heading">How Our Volunteers Change Lives</h2>
+    <p class="lives__note">*Slide center handle to show before &amp; after.</p>
+    {% set pairs = beforeAfter.home %}{% include "partials/before-after.njk" %}
+  </div>
+  <div class="container"><hr class="divider divider--cyan lives__divider"></div>
+  <div class="container video-wrap">
+    <div class="video" data-video="So7V1yJE8Uo">
+      <button class="video__play" type="button" aria-label="Play video">
+        <img src="https://i.ytimg.com/vi/So7V1yJE8Uo/hqdefault.jpg" alt="" loading="lazy">
+        <span class="video__icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
 </section>
 
 <section class="section section--light news">
@@ -61,23 +73,6 @@ arvoBold: true
       </div>
     </div>
     <hr class="divider news__divider-bottom">
-  </div>
-</section>
-
-<section class="section lives">
-  <div class="container">
-    <h2 class="lives__heading">How Our Volunteers Change Lives</h2>
-    <p class="lives__note">*Slide center handle to show before &amp; after.</p>
-    {% set pairs = beforeAfter.home %}{% include "partials/before-after.njk" %}
-  </div>
-  <div class="container"><hr class="divider divider--cyan lives__divider"></div>
-  <div class="container video-wrap">
-    <div class="video" data-video="So7V1yJE8Uo">
-      <button class="video__play" type="button" aria-label="Play video">
-        <img src="https://i.ytimg.com/vi/So7V1yJE8Uo/hqdefault.jpg" alt="" loading="lazy">
-        <span class="video__icon" aria-hidden="true"></span>
-      </button>
-    </div>
   </div>
 </section>
 

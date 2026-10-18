@@ -2,6 +2,14 @@
 
 Phase 1 reproduces the live WordPress site as-is, including its mistakes. These were noticed during the port and are worth fixing in phase 2.
 
+## Done (October 2026, requested by the owner)
+- Cookie bar now hides when Accept is clicked (the bar's `display: flex` was overriding `hidden`; a global `[hidden]` rule fixes it).
+- Home: "Our Mission:" label added; Volunteer/Patients/Donate cards removed; sections reordered to mission, before/after, video, featured news, CDCP.
+- Home featured news: the June 2026 CBC article was replaced with VOCM's October 7, 2026 report on the CDA assessment.
+- "Urban Dental Clinic" renamed to "Filling the Gap Scarborough" everywhere. The Scarborough email address `urbandental@ccrihc.org` is unchanged.
+- Footer reorganised into Quick Links plus one column per location, with icons, clickable email and phone, bold phone numbers and hours, and a separate legal bar.
+- About: "Spring Update 2026" publication tab removed.
+
 ## Broken or odd links
 - **Contact `#forpatients` anchor does not exist.** The header "Volunteer" button on Home, the "Contact Us" button on Support Our Work, and the "Volunteer" button on Volunteers all point to `/contact/#forpatients`. The Contact page only has `#patients`, `#forpatientsvolunteers` and `#donors`.
 - **Home "CLICK HERE" button** in the CDCP section links to `#` (nowhere).

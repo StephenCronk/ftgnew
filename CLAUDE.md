@@ -2,7 +2,7 @@
 
 Static Eleventy rebuild of fillingthegap.ca. See README.md for layout and commands, IMPROVEMENTS.md for the phase-2 backlog.
 
-- Phase 1 (current) is a faithful clone. Do not "fix" content, links or copy without being asked; log it in IMPROVEMENTS.md instead.
+- Phase 1 (the faithful clone) is done. We are now making the small improvements the user asks for, one batch at a time. Do not change other content, links or copy without being asked; log anything you notice in IMPROVEMENTS.md instead.
 - Keep the original slugs (`/elementor-1654/`, `/elementor-4058/`, `/patient-resources/`, `/home/meet-our-team/`, `/publication-N/`).
 - No WordPress/Elementor/Astra class names, no jQuery, no external feed scripts. Fonts come from Google Fonts; everything else is local.
 - Images: originals go in `src/assets/img-src/` (git-ignored), run `node scripts/build-images.mjs` to emit WebP into `src/assets/img/`. Only commit images a page uses.
