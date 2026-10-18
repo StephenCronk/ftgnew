@@ -1,7 +1,7 @@
 .site-footer { background: var(--light); color: var(--footer-text); font-size: 15px; line-height: 1.6; }
 .site-footer__strip { height: 30px; background: #e8e8e8; }
 .site-footer__inner {
-  display: grid; grid-template-columns: 1fr 1.3fr 1.3fr; gap: 32px 48px;
+  display: grid; grid-template-columns: 1fr 1.3fr 1.3fr 1fr; gap: 32px 40px;
   max-width: 1140px; margin: 0 auto; padding: 48px 20px 40px;
 }
 .footer-col__title {
@@ -36,7 +36,7 @@
 }
 @media (max-width: 921px) {
   .site-footer__inner { grid-template-columns: 1fr 1fr; }
-  .footer-nav { grid-column: 1 / -1; }
+  .footer-nav, .footer-general { grid-column: 1 / -1; }
   .footer-nav ul { columns: 2; column-gap: 24px; }
 }
 @media (max-width: 600px) {

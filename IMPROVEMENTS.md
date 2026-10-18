@@ -22,6 +22,7 @@ Phase 1 reproduces the live WordPress site as-is, including its mistakes. These 
 - Home: hero button "Are You Eligible?" (which led to the government CDCP info) replaced by "Need Care?" to Services & Eligibility; new "How To Get Care" three-step section using existing Contact/Services wording; news is now the three most recent articles as cards linking to the source; before/after trimmed to three pairs; closing "How Can You Help?" section (Donate / Volunteer / donated equipment, copy from Support Our Work).
 - Search and sharing: site name reads "Filling the Gap Dental Outreach" everywhere (titles, logo alt, footer); Home title is "Filling the Gap Dental Outreach | Affordable Urgent Dental Care in Toronto"; default meta description; canonical links; Open Graph / Twitter tags with a 1200×630 share image; schema.org data for the charity and both clinics on Home.
 - Accessibility and speed: before/after photos have alt text; footer column titles are h2 (fixes heading order); cookie button text darkened for contrast; visible keyboard focus ring site-wide; unused Roboto Slab and Roboto weights dropped; hero headline no longer fades in (it is the page's largest paint). Lighthouse on Home: mobile 92 / 100 / 100 / 100, desktop 100 across the board (was 91 / 95 / 100 / 91).
+- Footer (every page): new "General Inquiries" column with info@fillingthegap.ca after the two clinic columns.
 
 ## Broken or odd links
 - **Home "CLICK HERE" button** in the CDCP section links to `#` (nowhere).
