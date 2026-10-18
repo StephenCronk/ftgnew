@@ -32,6 +32,16 @@
     });
   }
 
+  // Mission logo: builds itself once, when the whole logo is on screen.
+  var logo = document.querySelector('[data-logo-anim]');
+  if (logo && !reduce && hasIO) {
+    logo.classList.add('is-armed');
+    var lio = new IntersectionObserver(function (entries) {
+      if (entries[0].intersectionRatio >= 0.98) { logo.classList.add('is-playing'); lio.disconnect(); }
+    }, { threshold: 0.98 });
+    lio.observe(logo);
+  }
+
   // Parallax: the banner's video drifts slower than the page.
   var banner = document.querySelector('[data-parallax]');
   if (banner && !reduce) {
