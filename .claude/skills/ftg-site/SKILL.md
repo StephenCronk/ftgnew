@@ -76,17 +76,18 @@ Tell the user what changed and give them `https://stephencronk.github.io/ftgnew/
 ## 5. Publish to the live site (only when asked)
 
 ```bash
-gh workflow run deploy-hostinger.yml -f dry_run=false -f clean_slate=false
+gh workflow run deploy-hostinger.yml -f dry_run=false
 gh run watch "$(gh run list --workflow deploy-hostinger.yml --limit 1 --json databaseId -q '.[0].databaseId')" --exit-status
 npm run check:live
 ```
 
 - Use `-f dry_run=true` first if you are unsure what will change. The log lists every upload and deletion.
-- Never set `clean_slate=true`. It wipes `public_html`, and was only for the one-time removal of WordPress.
+- There is no clean-slate option. If the server needs emptying, the user does it in hPanel File Manager. The action's own wipe failed silently on the WordPress files and then uploaded into a subfolder.
+- The workflow's last step asks the origin server for the homepage and fails if it isn't the new site.
 - The sync uploads only changed files, and deletes files it uploaded earlier that are gone from the build.
 - The FTP account opens directly in the site's `public_html`, so the workflow's `server-dir` is `./`. Setting it to `public_html/` creates a nested folder that the live site never serves.
 - If `check:live` reports old content, Hostinger's CDN is still caching. Ask the user to purge the CDN cache in hPanel, then check again.
-- The user can also deploy without you: Actions tab, "Deploy to Hostinger (live site)", "Run workflow", both boxes unticked.
+- The user can also deploy without you: Actions tab, "Deploy to Hostinger (live site)", "Run workflow", with "Dry run" unticked.
 
 ## Troubleshooting
 

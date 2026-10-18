@@ -42,10 +42,11 @@ There are two environments.
 - **Dev preview: GitHub Pages.** Every push to `main` runs `.github/workflows/pages.yml` and updates `https://stephencronk.github.io/ftgnew/`. The preview build sets `NOINDEX=1`, so every page carries a `noindex` tag and stays out of search engines.
 - **Live site: Hostinger.** `.github/workflows/deploy-hostinger.yml` only runs when started by hand from the Actions tab. It builds for the root domain, adds `deploy/hostinger/.htaccess`, checks the build, and syncs `_site/` to `public_html/` over FTPS. It only uploads changed files and deletes files it previously uploaded that no longer exist.
 
-The Hostinger workflow needs three repository secrets: `FTP_SERVER`, `FTP_USERNAME` and `FTP_PASSWORD`. The run options are:
+The Hostinger workflow needs three repository secrets: `FTP_SERVER`, `FTP_USERNAME` and `FTP_PASSWORD`. The run option is:
 
 - **Dry run** lists what would change without touching the server.
-- **Clean slate** deletes everything in `public_html` before uploading. Use it once for the first deploy, to remove the old WordPress files, and only after downloading a backup in hPanel.
+
+There is deliberately no clean-slate option. To empty the server, delete the contents of `public_html` in hPanel's File Manager, then run the workflow. Its last step checks that the homepage is really live.
 
 DNS stays at Hostinger. Do not touch the MX records, which carry Google Workspace mail. After a deploy, purge the Hostinger CDN cache if the old content still shows.
 

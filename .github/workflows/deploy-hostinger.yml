@@ -9,10 +9,6 @@ on:
         description: "Dry run: only list what would be uploaded or deleted"
         type: boolean
         default: false
-      clean_slate:
-        description: "DANGER: delete everything in the site folder (public_html) before uploading. First deploy only, after taking a backup."
-        type: boolean
-        default: false
 
 permissions:
   contents: read
@@ -65,8 +61,20 @@ jobs:
           # The FTP account opens directly in the site's public_html, so upload to its root.
           server-dir: ./
           dry-run: ${{ inputs.dry_run }}
-          dangerous-clean-slate: ${{ inputs.clean_slate }}
+          # No clean-slate option: the action swallows errors from its delete step and then
+          # uploads into whatever folder it was left in. Empty public_html in hPanel instead.
           exclude: |
             **/.git*
             **/.git*/**
             .nojekyll
+
+      - name: Confirm the new homepage is live
+        if: ${{ !inputs.dry_run }}
+        # Ask the Hostinger server directly (FTP and web share an IP), so the CDN cache can't hide a bad upload.
+        run: |
+          html=$(curl -sk --max-time 30 --resolve "fillingthegap.ca:443:${{ secrets.FTP_SERVER }}" "https://fillingthegap.ca/")
+          if ! grep -q '<title>Home - FillingTheGapDentalOutreach</title>' <<<"$html"; then
+            echo "::error::fillingthegap.ca/ is not serving the new homepage. The files may have landed in the wrong folder."
+            exit 1
+          fi
+          echo "Homepage is live on the origin server."
