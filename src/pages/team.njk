@@ -5,20 +5,26 @@ permalink: /home/meet-our-team/
 pageId: team
 pageCss: about
 ---
-<div class="team-top"><div class="container"><hr class="divider divider--cyan"></div></div>
-<section class="section section--light team-head team-head--page">
-  <div class="container"><h2 class="centered-heading">Our Team</h2></div>
+<section class="page-hero page-hero--plain" aria-labelledby="team-title">
+  <div class="page-hero__inner"><h1 class="page-hero__title" id="team-title">Our team</h1></div>
 </section>
-<div class="collage" style="background-image:url('{{ '/assets/img/collage-ftg-2-e1689937937420.webp' | url }}')" role="presentation"></div>
-<section class="section section--light board">
+
+<section class="band band--grey team">
   <div class="container">
-    <h2 class="centered-heading board__heading">Our Board</h2>
+    <img class="team__collage" src="{{ '/assets/img/collage-ftg-2-e1689937937420.webp' | url }}" alt="" loading="lazy" data-reveal>
+  </div>
+</section>
+
+<section class="band band--light board" aria-labelledby="board-title">
+  <div class="container">
+    <header class="band__head" data-reveal><h2 class="band__title" id="board-title">Our Board</h2></header>
     {% set items = widgets['team:34e2e72'].items %}{% set prefix = 'board' %}{% include "partials/adv-accordion.njk" %}
   </div>
 </section>
-<section class="section volunteers-grid">
+
+<section class="band band--grey volunteers-grid" aria-labelledby="vol-title">
   <div class="container">
-    <h2 class="centered-heading volunteers-grid__heading">Our Volunteers</h2>
+    <header class="band__head" data-reveal><h2 class="band__title" id="vol-title">Our Volunteers</h2></header>
     {% set items = widgets['team:1bf2a23'].items %}{% set variant = 'logo' %}{% set scroll = 1 %}{% include "partials/carousel.njk" %}
   </div>
 </section>

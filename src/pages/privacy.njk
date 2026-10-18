@@ -5,9 +5,9 @@ permalink: /elementor-4058/
 pageId: privacy
 pageCss: privacy
 ---
-<section class="page-hero page-hero--privacy">
-  <div class="page-hero__inner"><h1 class="page-hero__title">Privacy Policy</h1></div>
+<section class="page-hero page-hero--plain" aria-labelledby="privacy-title">
+  <div class="page-hero__inner"><h1 class="page-hero__title" id="privacy-title">Privacy policy</h1></div>
 </section>
-<section class="section privacy">
-  <div class="container privacy__body">{{ privacy.html | html | safe }}</div>
+<section class="band band--light">
+  <div class="container prose privacy__body">{{ privacy.html | html | safe }}</div>
 </section>

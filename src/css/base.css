@@ -33,12 +33,6 @@ button { font: inherit; cursor: pointer; }
 
 /* Layout primitives */
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
-.section { position: relative; }
-.section--light { background: var(--surface-tint); color: var(--navy); }
-.section--light h2, .section--light h3, .section--light h4, .section--light h5, .section--light h6 { color: var(--navy); }
-.section--cyan { background: var(--cyan-soft); color: var(--navy); }
-.section--cyan h2, .section--cyan h3, .section--cyan h4 { color: var(--navy); }
-.section--grey { background: var(--grey-bg); color: var(--grey-text); }
 
 @media (max-width: 1024px) {
   h1 { font-size: 45px; }
@@ -53,5 +47,4 @@ button { font: inherit; cursor: pointer; }
 img { max-width: 100%; }
 @media (max-width: 767px) {
   .container { padding-inline: 16px; }
-  .ba-grid { grid-template-columns: 1fr; }
 }

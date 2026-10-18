@@ -1,40 +1,27 @@
 .page-hero--contact { background-image: url('../../assets/img/bg-5.webp'); }
-.contact-block { padding: 57px 0 0; }
-.contact-block__heading { text-align: center; color: var(--cyan); font-size: 30px; margin: 0 0 40px; text-transform: uppercase; font-weight: 700; }
-.contact-block__heading--donors { margin-bottom: 60px; }
-.contact-block .container { max-width: none; padding: 0; }
-.contact-block--donors .container, .follow .container { max-width: var(--container); padding-inline: var(--gutter); }
-.contact-grid { display: flex; align-items: flex-start; margin: 10px 0; padding: 60px 60px 0; }
-.contact-grid__col { padding: 10px 10px 10px 70px; }
-.contact-grid__col--text { flex: 0 0 24%; padding-left: 0; padding-right: 20px; color: var(--light); font-size: 20px; line-height: 1.7; }
-.contact-grid__col--info { flex: 0 0 36%; padding-left: 10px; }
-.contact-grid__col--maps { flex: 1 1 auto; }
-.contact-grid__col h4 { font-size: 37px; color: var(--cyan); margin: 0 0 20px; }
-.contact-grid__col h2 { font-size: 37px; color: var(--cyan); margin: 0 0 20px; }
-.contact-grid__h2--pad { padding-top: 48px; }
-.contact-grid__col--text p { margin: 0 0 1em; }
-.ibox { display: flex; align-items: center; gap: 22px; margin: 0 0 22px; color: var(--light); }
-.ibox__icon { flex: 0 0 auto; color: var(--cyan); display: flex; }
-.ibox__text { font-family: var(--font-roboto); font-size: 16px; text-transform: uppercase; color: var(--light); line-height: 1.4; }
-.ibox--bold .ibox__text { font-weight: 700; }
-.contact-grid__col--maps iframe { width: 100%; height: 300px; border: 0; margin: 0 0 20px; }
-.donor-grid { display: flex; align-items: flex-start; margin: 10px 0; }
-.donor-grid__col { flex: 1 1 50%; padding: 10px; color: var(--light); font-size: 20px; line-height: 1.7; }
-.donor-grid__col--right { padding-left: 70px; }
-.donor-grid__col h4, .donor-grid__col h2 { font-size: 37px; color: var(--cyan); margin: 0 0 20px; }
-.paypal { margin: 10px 0 0; }
-.paypal__btn { background: none; border: 0; padding: 0; cursor: pointer; line-height: 0; }
-.follow { padding: 57px 0 50px; text-align: center; }
-.follow__heading { margin: 0 0 20px; }
-.social { display: flex; justify-content: center; gap: 5px; }
-.social__btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 4px; color: #fff; }
-.social__btn--fb { background: #3b5998; }
-.social__btn--ig { background: #262626; }
-.social__btn--li { background: #0077b5; }
-@media (max-width: 1024px) {
-  .contact-grid { flex-wrap: wrap; padding: 20px 0 0; } .contact-grid__col { flex-basis: 50%; padding: 10px; } .contact-grid__col--maps { flex-basis: 100%; }
-}
+
+.contact-who .card { background: var(--surface-tint); box-shadow: none; }
+.contact-places { margin-top: 24px; }
+.ibox { display: flex; align-items: flex-start; gap: 14px; margin: 0 0 14px; font-size: 16px; line-height: 1.5; color: var(--navy); word-break: break-word; }
+.ibox:last-child { margin-bottom: 0; }
+a.ibox:hover { color: var(--cyan-dark); }
+.ibox__icon { display: grid; place-items: center; flex: 0 0 36px; height: 36px; border-radius: 50%; background: color-mix(in srgb, var(--cyan-dark) 10%, transparent); color: var(--cyan-dark); }
+.ibox__icon svg { width: 16px; height: 16px; }
+.ibox--bold { font-weight: 700; }
+.contact-maps { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: clamp(40px, 6vw, 64px); }
+.contact-maps iframe { width: 100%; height: 320px; border: 0; border-radius: var(--radius); box-shadow: var(--shadow); }
+
+.donate__pp { margin-top: 24px; }
+.paypal { margin: 0; }
+.paypal__btn { padding: 0; border: 0; background: none; line-height: 0; cursor: pointer; transition: transform .2s var(--ease); }
+.paypal__btn:hover { transform: translateY(-2px); }
+
+.follow { padding: clamp(48px, 7vw, 80px) 0; text-align: center; }
+.social { display: flex; justify-content: center; gap: 12px; }
+.social__btn { display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid rgba(255, 255, 255, .3); border-radius: 50%; color: #fff; transition: background-color .2s, color .2s, border-color .2s, transform .2s var(--ease); }
+.social__btn:hover { border-color: var(--cyan); background: var(--cyan); color: var(--ink); transform: translateY(-2px); }
+
 @media (max-width: 767px) {
-  .contact-grid, .donor-grid { flex-direction: column; } .contact-grid__col, .donor-grid__col { flex-basis: auto; width: 100%; padding: 10px; }
-  .contact-grid__col h4, .contact-grid__col h2, .donor-grid__col h4, .donor-grid__col h2 { font-size: 28px; }
+  .contact-maps { grid-template-columns: 1fr; }
+  .contact-maps iframe { height: 260px; }
 }

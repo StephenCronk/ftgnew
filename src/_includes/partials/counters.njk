@@ -3,7 +3,7 @@
 {% for c in items %}
   <div class="counter">
     <div class="counter__n">{{ c.prefix }}<span data-count="{{ c.n }}">{{ c.n | int | localeNumber }}</span></div>
-    <h3 class="counter__label">{{ c.label }}</h3>
+    <p class="counter__label">{{ c.label }}</p>
   </div>
 {% endfor %}
 </div>

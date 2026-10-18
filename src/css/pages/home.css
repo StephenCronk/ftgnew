@@ -1,37 +1,7 @@
 /* Home: full-screen video hero, then mostly light bands with a few dark ones for emphasis. */
 
-/* ---- Shared pieces ---- */
-.band { padding: clamp(64px, 9vw, 120px) 0; }
-.band--navy { background: var(--ink); color: var(--light); }
-.band--light { background: var(--surface); color: var(--navy); }
-.band--grey { background: var(--surface-tint); color: var(--navy); }
-.band__head { max-width: 860px; margin: 0 auto clamp(32px, 5vw, 56px); text-align: center; }
-.band__title { margin: 0; font-size: clamp(34px, 5vw, 60px); line-height: 1.1; }
-.band--navy .band__title { color: var(--cyan); }
-.band--light .band__title, .band--grey .band__title { color: var(--navy); }
-.band__note { margin: 14px 0 0; font-size: 16px; color: var(--cyan); }
-.band--light .band__note, .band--grey .band__note { color: var(--cyan-dark); }
+/* Bands, pills, reveal and the before/after and video styling are shared: see components.css. */
 
-.pill {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 15px 30px; border: 2px solid transparent; border-radius: 999px;
-  font-size: 16px; font-weight: 700; line-height: 1; letter-spacing: .02em; white-space: nowrap;
-  transition: background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
-}
-.pill:hover { transform: translateY(-2px); }
-.pill svg { flex: 0 0 auto; }
-.pill--cyan { background: var(--cyan); color: var(--ink); box-shadow: 0 12px 28px -12px color-mix(in srgb, var(--cyan) 60%, transparent); }
-.pill--cyan:hover { background: #fff; }
-.pill--ghost { background: rgba(255, 255, 255, .08); color: #fff; border-color: rgba(255, 255, 255, .6); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
-.pill--ghost:hover { background: #fff; color: var(--navy-deep); border-color: #fff; }
-.pill--navy { background: var(--navy); color: #fff; box-shadow: 0 12px 28px -14px color-mix(in srgb, var(--ink) 90%, transparent); }
-.pill--navy:hover { background: var(--cyan-dark); }
-.pill--teal { background: var(--cyan-dark); color: #fff; box-shadow: 0 12px 28px -14px color-mix(in srgb, var(--cyan-dark) 70%, transparent); }
-.pill--teal:hover { background: var(--navy); }
-
-/* Scroll reveal: home.js adds .reveal-on to <html> and .is-in as each block enters the viewport. */
-.reveal-on [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
-.reveal-on [data-reveal].is-in { opacity: 1; transform: none; }
 /* Mission: the logo fades in first, then the text. */
 .reveal-on .intro__inner[data-reveal] { opacity: 1; transform: none; }
 .reveal-on .intro__inner > * { opacity: 0; transition: opacity 1s var(--ease), transform 1s var(--ease); }
@@ -70,8 +40,6 @@
 .video-toggle:hover { background: color-mix(in srgb, var(--navy-deep) 80%, transparent); }
 .video-toggle .icon-play, .video-toggle.is-paused .icon-pause { display: none; }
 .video-toggle.is-paused .icon-play { display: block; }
-.rise { opacity: 0; transform: translateY(24px); animation: rise .9s var(--ease) forwards; animation-delay: var(--d, 0ms); }
-@keyframes rise { to { opacity: 1; transform: none; } }
 
 /* ---- Mission ---- */
 .intro { padding: clamp(64px, 9vw, 120px) 0; background: var(--ink); color: var(--light); }
@@ -96,20 +64,8 @@
 .steps__link:hover { color: var(--navy); }
 
 /* ---- How our volunteers change lives ---- */
-.page-home .ba-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: none; }
-.page-home .ba { aspect-ratio: 4 / 3; border-radius: var(--radius); box-shadow: var(--shadow); }
-.page-home .ba__before, .page-home .ba__before img { height: 100%; }
-.page-home .ba__before img { object-fit: cover; }
-.page-home .ba__divider { width: 4px; margin-left: -2px; background: #fff; }
-.page-home .ba__handle { width: 38px; height: 38px; color: var(--ink); box-shadow: 0 0 0 4px rgba(255, 255, 255, .35); }
-.page-home .ba__label { bottom: 14px; padding: 5px 12px; border-radius: 999px; background: color-mix(in srgb, var(--navy-deep) 75%, transparent); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-.page-home .ba__label--before { left: 14px; }
-.page-home .ba__label--after { right: 14px; }
+.page-home .ba-grid { grid-template-columns: repeat(3, 1fr); max-width: none; }
 .lives__video { max-width: 960px; margin: clamp(48px, 7vw, 80px) auto 0; }
-.page-home .video { overflow: hidden; border-radius: 20px; box-shadow: var(--shadow); }
-.page-home .video__icon { width: 84px; height: 84px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 10px color-mix(in srgb, var(--cyan) 30%, transparent); transition: transform .3s var(--ease); }
-.page-home .video__icon::after { border-width: 13px 0 13px 22px; border-left-color: var(--ink); }
-.page-home .video__play:hover .video__icon { transform: translate(-50%, -50%) scale(1.08); }
 
 /* ---- Featured news ---- */
 .news__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -168,20 +124,10 @@
 .promo__go { display: grid; place-items: center; flex: 0 0 auto; width: 64px; height: 64px; border-radius: 50%; background: var(--cyan); color: var(--ink); transition: transform .3s var(--ease); }
 .promo:hover .promo__go { transform: translateX(6px); }
 
-/* ---- How can you help (closing call to action) ---- */
-.help-cta__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.help-cta__card { display: flex; flex-direction: column; padding: 30px 28px 26px; border: 1px solid color-mix(in srgb, var(--navy) 8%, transparent); border-radius: var(--radius); background: #fff; box-shadow: 0 18px 40px -26px color-mix(in srgb, var(--navy-deep) 50%, transparent); color: var(--navy); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
-.help-cta__card:hover { transform: translateY(-4px); box-shadow: 0 24px 46px -24px color-mix(in srgb, var(--navy-deep) 60%, transparent); }
-.help-cta__icon { display: grid; place-items: center; width: 56px; height: 56px; margin-bottom: 18px; border-radius: 50%; background: color-mix(in srgb, var(--cyan-dark) 10%, transparent); color: var(--cyan-dark); }
-.help-cta__icon svg { width: 26px; height: 26px; }
-.help-cta__card p { margin: 0 0 20px; font-size: 16px; line-height: 1.6; }
-.help-cta__go { align-self: flex-start; margin-top: auto; padding: 11px 22px; border-radius: 999px; background: var(--navy); color: #fff; font-size: 15px; font-weight: 700; line-height: 1; }
-.help-cta__card:hover .help-cta__go { background: var(--cyan-dark); }
-
 @media (max-width: 1024px) {
   .page-home .ba-grid { grid-template-columns: repeat(2, 1fr); }
   .cdcp__grid { grid-template-columns: 1fr; }
-  .steps__list, .news__grid, .help-cta__grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
+  .steps__list, .news__grid { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
   .cdcp__img { max-width: 520px; margin: 0 auto; }
 }
 @media (max-width: 767px) {
@@ -207,7 +153,5 @@
   .promo__go { width: 52px; height: 52px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .rise { animation: none; opacity: 1; transform: none; }
-  .reveal-on [data-reveal] { opacity: 1; transform: none; transition: none; }
-  .pill, .promo__bg, .insta__item img, .news-card__link, .help-cta__card { transition: none; }
+  .promo__bg, .insta__item img, .news-card__link { transition: none; }
 }

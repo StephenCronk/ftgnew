@@ -7,9 +7,9 @@ pageCss: publication
 pubKey: publication-4
 ---
 {% set pub = publications[pubKey] %}
-<section class="pub pub--4">
+<section class="band band--grey pub">
   <div class="pub__pages">
     {% for img in pub.images %}<img src="{{ img | url }}" alt="{{ pub.title }} page {{ loop.index }}" width="{{ pub.width }}" loading="{{ 'eager' if loop.first else 'lazy' }}">{% endfor %}
-    <div class="pub__back"><a class="btn pub__btn" href="{{ '/about' | url }}">Back</a></div>
+    <div class="pub__back"><a class="pill pill--navy" href="{{ '/about' | url }}">Back</a></div>
   </div>
 </section>

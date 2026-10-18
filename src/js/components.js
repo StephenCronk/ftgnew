@@ -1,5 +1,17 @@
-// Shared interactive components: before/after sliders, tabs, accordions, lazy YouTube, counters.
+// Shared interactive components: scroll reveal, before/after sliders, tabs, accordions, lazy YouTube, counters.
 (function () {
+  // Fade blocks marked [data-reveal] in as they scroll into view.
+  var reveal = document.querySelectorAll('[data-reveal]');
+  if (reveal.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('reveal-on');
+    var rio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); rio.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    reveal.forEach(function (el) { rio.observe(el); });
+  }
+
   // Before / after
   document.querySelectorAll('[data-ba]').forEach(function (el) {
     var range = el.querySelector('.ba__range');

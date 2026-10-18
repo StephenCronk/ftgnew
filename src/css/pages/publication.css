@@ -1,8 +1,4 @@
-.pub { padding: 60px 0 0; }
-.pub__pages { display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: var(--container); margin: 0 auto 60px; padding: 40px; }
-.pub--1 .pub__pages, .pub--3 .pub__pages, .pub--4 .pub__pages { background: var(--slate); margin: 60px auto; }
-.pub--2 .pub__pages { background: var(--cyan-soft); }
-.pub__pages img { width: 100%; max-width: 792px; height: auto; }
-.pub__back { padding: 20px 0 40px; }
-.pub--2 .pub__btn { background: var(--navy); color: var(--light); }
-@media (max-width: 767px) { .pub__pages { padding: 16px; } }
+.pub { padding: clamp(40px, 6vw, 72px) 0; }
+.pub__pages { display: flex; flex-direction: column; align-items: center; gap: 24px; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+.pub__pages img { width: 100%; max-width: 792px; height: auto; border-radius: calc(var(--radius) / 2); box-shadow: var(--shadow); }
+.pub__back { padding-top: 16px; }

@@ -5,51 +5,47 @@ permalink: /patient-resources/
 pageId: services
 pageCss: services
 ---
-<section class="page-hero page-hero--services">
-  <div class="page-hero__inner"><h1 class="page-hero__title">Services &amp; Eligibility</h1></div>
-</section>
-
-<section class="section section--light gap">
-  <div class="container gap__cols">
-    <div class="gap__text">
-      <h2 class="gap__heading">The Gap</h2>
-      <h4 class="gap__sub"><span class="gap__cyan">A complex landscape of benefits and plans leaves many Ontarians without care due to the financial and non-financial barriers they face.</span> We are here to help navigate to your best oral health.</h4>
-    </div>
-    <div class="gap__anim"><img src="{{ '/assets/img/lottie-still.webp' | url }}" alt="" width="220" height="270" loading="lazy"></div>
-  </div>
-</section>
-
-<section class="section section--light elig">
-  <div class="container elig__cols">
-    <div class="elig__img"><img src="{{ '/assets/img/Untitled-design-5.webp' | url }}" alt="" width="1024" height="1024" loading="lazy"></div>
-    <div class="elig__text">
-      <h2 class="elig__heading h-reg">Are You Eligible For Our Program?</h2>
-      <p>At Filling the Gap Dental Outreach, we must ensure resources are being devoted to those most in need. To qualify for an appointment at Filling the Gap Dental Outreach, all patients must <b>first</b> complete a screening process.</p>
-      <p><b>In addition to other criteria, patients must…</b></p>
-      <ul>
-        <li><b>Not be enrolled in any private or public benefits or insurance plans.*</b></li>
-        <li><b>Be below the low-income threshold.</b></li>
-      </ul>
-      <p class="elig__note">*If you are eligible for the CDCP but are having trouble accessing care, <b>please click the button below</b> or contact us and we will make every effort to help you navigate your options.</p>
-      <a class="btn btn--sm" href="https://www.canada.ca/en/services/benefits/dental/dental-care-plan/apply.html">Are you eligible for the cdcp?</a>
+<section class="page-hero page-hero--services" aria-labelledby="services-title">
+  <div class="page-hero__inner">
+    <h1 class="page-hero__title" id="services-title">Services &amp; eligibility</h1>
+    <p class="page-hero__lede rise" style="--d:180ms">A complex landscape of benefits and plans leaves many Ontarians without care due to the financial and non-financial barriers they face. We are here to help navigate to your best oral health.</p>
+    <div class="page-hero__actions pills rise" style="--d:300ms">
+      <a class="pill pill--cyan" href="{{ '/contact/#forpatientsvolunteers' | url }}">Contact Us</a>
+      <a class="page-hero__link" href="#eligibility">Are you eligible?</a>
     </div>
   </div>
 </section>
 
-<section class="section section--light screen">
+<section class="band band--light elig" id="eligibility" aria-labelledby="elig-title">
   <div class="container">
-    <h3 class="screen__heading">To begin the screening process, select the button below</h3>
-    <div class="screen__btn"><a class="cbtn" href="{{ '/contact/' | url }}">Contact Us</a></div>
+    <div class="split">
+      <img class="split__img" src="{{ '/assets/img/Untitled-design-5.webp' | url }}" alt="" width="1024" height="1024" loading="lazy" data-reveal>
+      <div class="copy" data-reveal>
+        <h2 class="band__title elig__title" id="elig-title">Are You Eligible For Our Program?</h2>
+        <p>At Filling the Gap Dental Outreach, we must ensure resources are being devoted to those most in need. To qualify for an appointment at Filling the Gap Dental Outreach, all patients must <b>first</b> complete a screening process.</p>
+        <p><b>In addition to other criteria, patients must…</b></p>
+        <ul>
+          <li><b>Not be enrolled in any private or public benefits or insurance plans.*</b></li>
+          <li><b>Be below the low-income threshold.</b></li>
+        </ul>
+        <p class="note">*If you are eligible for the CDCP but are having trouble accessing care, <b>please click the button below</b> or contact us and we will make every effort to help you navigate your options.</p>
+        <p class="elig__cdcp"><a class="pill pill--outline" href="https://www.canada.ca/en/services/benefits/dental/dental-care-plan/apply.html">Are you eligible for the CDCP?</a></p>
+      </div>
+    </div>
+    <div class="screen card" data-reveal>
+      <h3 class="screen__title">To begin the screening process, select the button below</h3>
+      <a class="pill pill--navy" href="{{ '/contact/' | url }}">Contact Us</a>
+    </div>
   </div>
 </section>
 
-<section class="section services">
-  <div class="container services__cols">
-    <div class="services__text">
-      <h2 class="services__heading h-reg">Services Provided</h2>
-      <h5>Volunteer dentists and hygienists provide affordable dental treatment on an urgent-care basis.</h5>
-      <h5>Services include:</h5>
-      <ul>
+<section class="band band--navy" aria-labelledby="provided-title">
+  <div class="container split">
+    <div class="copy" data-reveal>
+      <h2 class="band__title" id="provided-title">Services Provided</h2>
+      <p class="band__lede">Volunteer dentists and hygienists provide affordable dental treatment on an urgent-care basis.</p>
+      <p class="eyebrow services__label">Services include</p>
+      <ul class="services__list">
         <li>Emergency Examinations</li>
         <li>X-Rays</li>
         <li>Extractions</li>
@@ -58,20 +54,20 @@ pageCss: services
         <li>Dental Cleanings</li>
       </ul>
     </div>
-    <div class="services__img"><img src="{{ '/assets/img/volunteer.webp' | url }}" alt="" width="865" height="1024" loading="lazy"></div>
+    <img class="split__img services__img" src="{{ '/assets/img/volunteer.webp' | url }}" alt="" width="865" height="1024" loading="lazy" data-reveal>
   </div>
 </section>
 
-<section class="emergency" style="background-image:url('{{ '/assets/img/Untitled-design-4.webp' | url }}')">
-  <div class="container">
-    <h1 class="emergency__heading">If You Are Experiencing A Dental Emergency, Please Contact An Emergency Dental Clinic Or Your Local Emergency Room</h1>
-    <p class="emergency__text"><em>&nbsp;Please note that Filling the Gap Dental Outreach is not a comprehensive care program and does not provide routine dental care, “checkups,” or more advanced treatment. As a charity, visits are by appointment only, and we can only offer up to a maximum of three visits to eligible patients as time and resources permit. We encourage all patients to seek comprehensive care as soon as possible.</em></p>
+<section class="photo-band" style="background-image:url('{{ '/assets/img/Untitled-design-4.webp' | url }}')">
+  <div class="container" data-reveal>
+    <h2 class="photo-band__title">If You Are Experiencing A Dental Emergency, Please Contact An Emergency Dental Clinic Or Your Local Emergency Room</h2>
+    <p><em>Please note that Filling the Gap Dental Outreach is not a comprehensive care program and does not provide routine dental care, “checkups,” or more advanced treatment. As a charity, visits are by appointment only, and we can only offer up to a maximum of three visits to eligible patients as time and resources permit. We encourage all patients to seek comprehensive care as soon as possible.</em></p>
   </div>
 </section>
 
-<section class="section section--cyan reviews reviews--services">
+<section class="band band--grey" aria-labelledby="reviews-title">
   <div class="container">
-    <h2 class="reviews__heading h-reg">What Our Patients Say</h2>
+    <header class="band__head" data-reveal><h2 class="band__title" id="reviews-title">What Our Patients Say</h2></header>
     {% set items = widgets['services:8aea3d3'].items %}{% set variant = 'review' %}{% set scroll = 2 %}{% include "partials/carousel.njk" %}
   </div>
 </section>

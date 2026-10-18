@@ -25,8 +25,7 @@
   --heading-weight: 700; --heading-tracking: -.02em; --radius: 10px;
 }
 /* Sans and soft-serif headings need one weight throughout; eyebrow labels keep their own style. */
-:root[data-theme] :is(h1, h2, h3, h4, h5, h6):not(.intro__eyebrow) { font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); }
-:root[data-theme] :is(.counter__n, .counter__label) { font-family: var(--font-slab); }
+:root[data-theme] :is(h1, h2, h3, h4, h5, h6):not(.intro__eyebrow, .eyebrow) { font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); }
 
 /* ---- Floating picker ---- */
 .theme-picker { position: fixed; z-index: 60; top: 50%; right: 0; display: flex; align-items: center; transform: translateY(-50%); font-family: 'Quicksand', sans-serif; }

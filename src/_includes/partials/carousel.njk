@@ -10,8 +10,8 @@
             {% if it.title %}<div class="tm__title">{{ it.title }}</div>{% endif %}
             {% if it.rating %}<div class="tm__rating" aria-label="{{ it.rating }} out of 5 stars">{% for i in range(0, it.rating) %}<span>★</span>{% endfor %}</div>{% endif %}
             <div class="tm__content">{{ it.html | html | safe }}</div>
+            {% if it.name %}<div class="tm__meta">{{ it.name }}</div>{% endif %}
           </div>
-          {% if it.name %}<div class="tm__meta">{{ it.name }}</div>{% endif %}
         </div>
       </div>
     {% endfor %}
