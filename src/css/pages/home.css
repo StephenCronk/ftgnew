@@ -10,6 +10,7 @@
 .band--navy .band__title { color: var(--cyan); }
 .band--light .band__title, .band--grey .band__title { color: var(--navy); }
 .band__note { margin: 14px 0 0; font-size: 16px; color: var(--cyan); }
+.band--light .band__note, .band--grey .band__note { color: var(--cyan-dark); }
 
 .pill {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -34,7 +35,7 @@
 .vhero {
   position: relative; display: flex; align-items: flex-end; overflow: hidden;
   min-height: 100vh; min-height: 100svh;
-  background: var(--navy-deep) url('../../assets/img/hero-toronto-poster.webp') center / cover no-repeat;
+  background: var(--navy-deep) url('../../assets/img/hero-volunteers-poster.webp') center / cover no-repeat;
   color: #fff;
 }
 .vhero__media { position: absolute; inset: 0; }
@@ -54,15 +55,15 @@
 .vhero__stats { display: flex; flex-wrap: wrap; gap: 20px 56px; list-style: none; }
 .vhero__num { display: block; font-family: var(--font-slab); font-size: clamp(28px, 3vw, 40px); font-weight: 700; line-height: 1; color: #fff; }
 .vhero__label { display: block; margin-top: 8px; font-size: 13px; line-height: 1.3; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .78); }
-.vhero__toggle {
+.video-toggle {
   position: absolute; z-index: 2; right: 28px; bottom: 28px; display: grid; place-items: center;
   width: 44px; height: 44px; padding: 0; border: 1px solid rgba(255, 255, 255, .5); border-radius: 50%;
   background: rgba(0, 28, 48, .45); color: #fff; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
   transition: background-color .2s;
 }
-.vhero__toggle:hover { background: rgba(0, 28, 48, .8); }
-.vhero__toggle .icon-play, .vhero__toggle.is-paused .icon-pause { display: none; }
-.vhero__toggle.is-paused .icon-play { display: block; }
+.video-toggle:hover { background: rgba(0, 28, 48, .8); }
+.video-toggle .icon-play, .video-toggle.is-paused .icon-pause { display: none; }
+.video-toggle.is-paused .icon-play { display: block; }
 .vhero__cue { position: absolute; z-index: 2; left: 50%; bottom: 28px; width: 26px; height: 42px; margin-left: -13px; border: 2px solid rgba(255, 255, 255, .6); border-radius: 14px; }
 .vhero__cue::after { content: ""; position: absolute; left: 50%; top: 8px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--cyan); animation: cue 1.8s var(--ease) infinite; }
 @keyframes cue { 0% { opacity: 0; transform: translateY(0); } 35% { opacity: 1; } 75%, 100% { opacity: 0; transform: translateY(12px); } }
@@ -70,15 +71,15 @@
 @keyframes rise { to { opacity: 1; transform: none; } }
 
 /* ---- Mission ---- */
-.intro { padding: clamp(64px, 9vw, 120px) 0; background: var(--light); color: var(--navy); }
+.intro { padding: clamp(64px, 9vw, 120px) 0; background: var(--navy); color: var(--light); }
 .intro__inner { display: grid; grid-template-columns: minmax(160px, 260px) 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; max-width: 1100px; }
 .intro__logo { width: 100%; }
-.intro__text { margin: 0; font-family: var(--font-slab); font-size: clamp(21px, 2.3vw, 30px); line-height: 1.5; color: var(--navy); }
-.intro__label { display: block; margin-bottom: 12px; font-family: var(--font-body); font-size: 15px; letter-spacing: .18em; text-transform: uppercase; color: var(--cyan-dark); }
+.intro__text { margin: 0; font-family: var(--font-slab); font-size: clamp(21px, 2.3vw, 30px); line-height: 1.5; color: #fff; }
+.intro__label { display: block; margin-bottom: 12px; font-family: var(--font-body); font-size: 15px; letter-spacing: .18em; text-transform: uppercase; color: var(--cyan); }
 
 /* ---- How our volunteers change lives ---- */
 .page-home .ba-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: none; }
-.page-home .ba { aspect-ratio: 4 / 3; border-radius: var(--radius); box-shadow: 0 20px 40px -22px rgba(0, 0, 0, .7); }
+.page-home .ba { aspect-ratio: 4 / 3; border-radius: var(--radius); box-shadow: var(--shadow); }
 .page-home .ba__before, .page-home .ba__before img { height: 100%; }
 .page-home .ba__before img { object-fit: cover; }
 .page-home .ba__divider { width: 4px; margin-left: -2px; background: #fff; }
@@ -97,15 +98,16 @@
 .tabs__list { display: flex; flex-direction: column; gap: 8px; }
 .tabs__tab {
   padding: 16px 18px; border: 0; border-left: 4px solid transparent; border-radius: 12px;
-  background: rgba(255, 255, 255, .55); text-align: left;
-  font-family: var(--font-body); font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--navy);
-  transition: background-color .2s, border-color .2s, box-shadow .2s;
+  background: rgba(255, 255, 255, .07); text-align: left;
+  font-family: var(--font-body); font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--light);
+  transition: background-color .2s, border-color .2s, color .2s;
 }
-.tabs__tab:hover { background: #fff; }
-.tabs__tab.is-active { background: #fff; border-left-color: var(--cyan); box-shadow: var(--shadow); }
+.tabs__tab:hover { background: rgba(255, 255, 255, .14); }
+.tabs__tab.is-active { background: #fff; border-left-color: var(--cyan); color: var(--navy); }
 .tabs__tab br { display: none; }
-.tabs__tab i { display: block; margin-top: 8px; font-size: 11px; font-style: normal; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan-dark); }
-.tabs__panels { overflow: hidden; border-radius: 20px; background: #fff; box-shadow: var(--shadow); }
+.tabs__tab i { display: block; margin-top: 8px; font-size: 11px; font-style: normal; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
+.tabs__tab.is-active i { color: var(--cyan-dark); }
+.tabs__panels { overflow: hidden; border-radius: 20px; background: #fff; box-shadow: 0 24px 50px -24px rgba(0, 0, 0, .6); }
 .tabs__panel { padding: clamp(24px, 3.5vw, 44px); font-size: 17px; line-height: 1.7; color: var(--navy); }
 .tabs__panel h4, .tabs__panel h5 { margin: 0 0 12px; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.25; color: var(--navy); text-transform: none; }
 .tabs__panel h4 + p, .tabs__panel h5 + p { font-size: 14px; color: #5b7184; }
@@ -114,21 +116,26 @@
 .tabs__panel a { color: var(--cyan-dark); font-weight: 700; }
 
 /* ---- CDCP ---- */
-.cdcp { padding-bottom: 0; }
-.cdcp__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
-.cdcp__cards { display: grid; gap: 16px; list-style: none; }
-.cdcp__card { display: flex; align-items: flex-start; gap: 18px; padding: 22px 24px; border-radius: var(--radius); background: #fff; box-shadow: 0 12px 30px -22px rgba(0, 28, 48, .55); font-size: 17px; line-height: 1.6; color: var(--navy); }
-.cdcp__card p { margin: 0; }
-.cdcp__icon { display: grid; place-items: center; flex: 0 0 52px; height: 52px; border-radius: 50%; background: rgba(0, 175, 209, .14); color: var(--cyan-dark); }
-.cdcp__icon svg { width: 24px; height: 24px; }
-.cdcp__media { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.cdcp__grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.cdcp__title { margin-bottom: 28px; }
+.cdcp__list { display: grid; gap: 22px; margin: 0 0 32px; list-style: none; }
+.cdcp__list li { display: flex; align-items: flex-start; gap: 18px; font-size: 17px; line-height: 1.6; color: var(--navy); }
+.cdcp__list p { margin: 0; }
+.cdcp__icon { display: grid; place-items: center; flex: 0 0 44px; height: 44px; border-radius: 50%; background: rgba(0, 175, 209, .14); color: var(--cyan-dark); }
+.cdcp__icon svg { width: 20px; height: 20px; }
 .cdcp__img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 28px; box-shadow: var(--shadow); }
-.cdcp__callout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 40px; margin-top: clamp(40px, 6vw, 64px); padding: clamp(24px, 4vw, 44px); border-radius: 20px; background: var(--navy); color: var(--light); font-size: 17px; line-height: 1.7; }
-.cdcp__callout p { margin: 0; }
-.cdcp__callout b { color: #fff; }
-.cdcp__note { margin: 24px 0 0; padding: 18px 22px; border-left: 4px solid var(--cyan); border-radius: 0 12px 12px 0; background: #fff; font-size: 17px; line-height: 1.6; color: var(--navy); }
-.cdcp__statement { margin-top: clamp(56px, 8vw, 96px); padding: clamp(36px, 5vw, 56px) 0; background: var(--cyan); text-align: center; }
-.cdcp__statement-text { margin: 0; font-size: clamp(24px, 3.2vw, 40px); font-weight: 400; color: var(--navy-deep); }
+.cdcp__more { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 48px; margin-top: clamp(48px, 7vw, 80px); padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid rgba(0, 64, 106, .15); font-size: 17px; line-height: 1.7; color: var(--navy); }
+.cdcp__more p { margin: 0; }
+.cdcp__note { margin: 28px 0 0; padding-left: 16px; border-left: 3px solid var(--cyan); font-size: 15px; line-height: 1.6; color: #3d5a72; }
+
+/* ---- Parallax video banner ---- */
+.pbanner { position: relative; display: flex; align-items: center; overflow: hidden; height: 34vh; min-height: 240px; max-height: 380px; background: var(--navy-deep) url('../../assets/img/banner-redtrain-poster.webp') center / cover no-repeat; }
+.pbanner__media { position: absolute; left: 0; right: 0; top: -25%; height: 150%; will-change: transform; }
+.pbanner__video { width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.pbanner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 44, 68, .85), rgba(0, 44, 68, .55)); }
+.pbanner__inner { position: relative; z-index: 1; }
+.pbanner__title { max-width: 18em; margin: 0 auto; font-size: clamp(28px, 4vw, 52px); font-weight: 400; line-height: 1.15; text-align: center; color: #fff; text-shadow: 0 2px 20px rgba(0, 0, 0, .4); }
+.pbanner__toggle { right: 20px; bottom: 20px; width: 38px; height: 38px; }
 
 /* ---- Instagram ---- */
 .insta__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
@@ -156,7 +163,7 @@
 @media (max-width: 1024px) {
   .page-home .ba-grid { grid-template-columns: repeat(2, 1fr); }
   .cdcp__grid { grid-template-columns: 1fr; }
-  .cdcp__media { max-width: 520px; width: 100%; margin: 0 auto; }
+  .cdcp__img { max-width: 520px; margin: 0 auto; }
 }
 @media (max-width: 767px) {
   .vhero__content { padding: calc(var(--header-h) + 28px) 20px 80px; }
@@ -166,6 +173,7 @@
   .vhero__actions .pill { flex: 1 1 auto; padding: 14px 20px; }
   .vhero__stats { gap: 18px 28px; }
   .vhero__toggle { right: 16px; bottom: 20px; }
+  .pbanner__toggle { right: 12px; bottom: 12px; }
   .vhero__cue { display: none; }
   .intro__inner { grid-template-columns: 1fr; text-align: center; }
   .intro__logo { max-width: 180px; margin: 0 auto; }
@@ -174,8 +182,8 @@
   .tabs__list { flex-direction: row; gap: 10px; margin: 0 -16px; padding: 4px 16px 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; }
   .tabs__tab { flex: 0 0 78%; scroll-snap-align: start; }
   .tabs__panel { font-size: 16px; }
-  .cdcp__card { padding: 18px; font-size: 16px; }
-  .cdcp__callout { grid-template-columns: 1fr; font-size: 16px; }
+  .cdcp__list li, .cdcp__more { font-size: 16px; }
+  .cdcp__more { grid-template-columns: 1fr; }
   .insta__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .promo__go { width: 52px; height: 52px; }
 }
