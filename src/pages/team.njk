@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Our Team
+permalink: /home/meet-our-team/
+pageId: team
+pageCss: about
+---
+<div class="team-top"><div class="container"><hr class="divider divider--cyan"></div></div>
+<section class="section section--light team-head team-head--page">
+  <div class="container"><h2 class="centered-heading">Our Team</h2></div>
+</section>
+<div class="collage" style="background-image:url('{{ '/assets/img/collage-ftg-2-e1689937937420.webp' | url }}')" role="presentation"></div>
+<section class="section section--light board">
+  <div class="container">
+    <h2 class="centered-heading board__heading">Our Board</h2>
+    {% set items = widgets['team:34e2e72'].items %}{% set prefix = 'board' %}{% include "partials/adv-accordion.njk" %}
+  </div>
+</section>
+<section class="section volunteers-grid">
+  <div class="container">
+    <h2 class="centered-heading volunteers-grid__heading">Our Volunteers</h2>
+    {% set items = widgets['team:1bf2a23'].items %}{% set variant = 'logo' %}{% set scroll = 1 %}{% include "partials/carousel.njk" %}
+  </div>
+</section>

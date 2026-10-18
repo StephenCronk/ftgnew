@@ -1,0 +1,9 @@
+{#- expects items [{title, html}], prefix (string), optional single -#}
+<div class="toggle" data-accordion>
+{% for it in items %}
+  <div class="acc__item toggle__item">
+    <h3 class="toggle__heading"><button class="acc__trigger toggle__title" type="button" id="{{ prefix }}-t{{ loop.index }}" aria-expanded="false" aria-controls="{{ prefix }}-p{{ loop.index }}"><span class="toggle__icon" aria-hidden="true"></span>{{ it.title }}</button></h3>
+    <div class="acc__panel toggle__panel" id="{{ prefix }}-p{{ loop.index }}" role="region" aria-labelledby="{{ prefix }}-t{{ loop.index }}"><div class="toggle__content">{{ it.html | safe }}</div></div>
+  </div>
+{% endfor %}
+</div>

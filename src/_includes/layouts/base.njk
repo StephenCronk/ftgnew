@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title | safe }} - {{ site.name }}</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<link rel="icon" href="{{ '/assets/img/cropped-FTG-icon300px-1.webp' | url }}" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Arvo:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&family=Roboto+Slab:wght@300;400;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<link rel="stylesheet" href="{{ '/css/tokens.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/base.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/header.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/footer.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/components.css' | url }}">
+{% if pageCss %}<link rel="stylesheet" href="{{ ('/css/pages/' + pageCss + '.css') | url }}">{% endif %}
+</head>
+<body class="page-{{ pageId or 'default' }}{% if arvoBold %} arvo-bold{% endif %}">
+<a class="skip-link" href="#content">Skip to content</a>
+{% include "partials/header.njk" %}
+<main id="content">
+{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+{% include "partials/cookie.njk" %}
+<script src="{{ '/js/main.js' | url }}" defer></script>
+<script src="{{ '/js/components.js' | url }}" defer></script>
+{% if pageJs %}<script src="{{ ('/js/pages/' + pageJs + '.js') | url }}" defer></script>{% endif %}
+</body>
+</html>

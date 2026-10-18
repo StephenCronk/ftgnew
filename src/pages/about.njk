@@ -1,0 +1,110 @@
+---
+layout: layouts/base.njk
+title: About Us
+permalink: /about/
+pageId: about
+pageCss: about
+---
+<section class="page-hero page-hero--plain">
+  <div class="page-hero__inner"><h1 class="page-hero__title">About Us</h1></div>
+</section>
+
+<section class="section section--light mvg">
+  <div class="container mvg__cols">
+    <div class="mvg__left">
+      <h5>Our Mission</h5>
+      <p><strong>Our Mission</strong> is to provide affordable urgent dental care through volunteer dentists to low-income Torontonians who have nowhere else to turn.</p>
+      <h5>Our Vision</h5>
+      <p><strong>Our Vision</strong> is a Toronto where everyone has equal access to oral health care and the opportunity to achieve overall well-being.</p>
+      <h5>Our Goals</h5>
+      <p><strong>Our Goals</strong> are to close gaps in access to dental care by providing timely, affordable urgent treatment, reducing oral health inequities, and connecting underserved Torontonians with the care and support they need.</p>
+    </div>
+    <div class="mvg__right">
+      <p>Filling the Gap Dental Outreach is a non-profit organization dedicated to reducing barriers to oral healthcare for underserved communities across Toronto. Rather than operating from a single location, we partner with existing community dental clinics throughout the city to provide affordable urgent dental treatment to individuals who may otherwise have nowhere else to turn.</p>
+      <p>The people we serve face a range of financial and non-financial barriers to care. This includes individuals without dental benefits, people experiencing homelessness, students, migrant workers, and Canadians who may be unable to access public dental programs.</p>
+      <p>What makes Filling the Gap Dental Outreach unique is our community-based and collaborative approach. By using existing clinic spaces and working with volunteer dental professionals, we help close gaps in access to care while making effective use of resources already available within the community.</p>
+      <p>Our work is made possible by dentists and dental hygienists who generously volunteer their time and expertise. We welcome oral health professionals at every stage of their careers who share our commitment to providing compassionate, accessible, and dignified care to Torontonians in need.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section impact-about">
+  <div class="impact-about__box">
+    <h2 class="impact-about__heading">Our Impact<br>in 2025</h2>
+    <div class="container">{% set items = widgets['about:0fb7c4e'].items %}{% include "partials/counters.njk" %}</div>
+  </div>
+</section>
+
+<section class="section section--light quote">
+  <div class="container quote__cols">
+    <div class="quote__img"><img src="{{ '/assets/img/FTG-logo-blue-.webp' | url }}" alt="" loading="lazy"></div>
+    <div class="quote__text">
+      <p>Despite the introduction of the Canadian Dental Care Plan, many people still fall through the cracks.</p>
+      <p>&nbsp;</p>
+      <p>Navigating the complex landscape of public benefits and dental coverage can leave many Torontonians without access to the care they need. We are here to help bridge those gaps and guide individuals toward better oral health.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section video-section">
+  <div class="container">
+    <div class="video" data-video="-N31J6L3qJU">
+      <button class="video__play" type="button" aria-label="Play video"><img src="https://i.ytimg.com/vi/-N31J6L3qJU/hqdefault.jpg" alt="" loading="lazy"><span class="video__icon" aria-hidden="true"></span></button>
+    </div>
+  </div>
+</section>
+
+<section class="section story">
+  <div class="container">
+    <h2 class="story__heading h-reg">Our Story</h2>
+    <div class="story__row">
+      <div class="story__img story__img--shadow"><img src="{{ '/assets/img/volunteers.webp' | url }}" alt="" loading="lazy"></div>
+      <div class="story__text story__text--lg">
+        <p>It all started in 2007 with a donated dental chair and a dental assistant in Scarborough, Toronto.</p>
+        <p>A coalition of community partners had recognized the need to help the growing number of Torontonians who suffer with debilitating tooth pain and infection without having anywhere to turn for dental care due to gaps that exist in the Canadian healthcare system.&nbsp; This joint venture was called the Urban Dental Clinic.</p>
+      </div>
+    </div>
+    <div class="story__row">
+      <div class="story__text">
+        <p>The program expanded in 2017, relocating to a larger space alongside our partners, the Canadian Centre for Refugee and Immigrant Healthcare, and adding three dental chairs. Volunteer dentists and hygienists provided vital services to patients unable to access care through private or government plans.</p>
+      </div>
+      <div class="story__img"><img src="{{ '/assets/img/IMG_0532-e1689078889860.webp' | url }}" alt="" loading="lazy"></div>
+    </div>
+    <div class="story__row">
+      <div class="story__img"><img src="{{ '/assets/img/ops.webp' | url }}" alt="" loading="lazy"></div>
+      <div class="story__text">
+        <p>&nbsp;In 2020, Filling the Gap Dental Outreach was established as a certified charity and a second clinic was opened in partnership with the Rexdale Hub Community Health Centre in the GTA in order to reach more people in need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--light team-head">
+  <div class="container"><h2 class="centered-heading h-reg">Our Team</h2></div>
+</section>
+<div class="collage" style="background-image:url('{{ '/assets/img/collage-ftg-2-e1689937937420.webp' | url }}')" role="presentation"></div>
+
+<section class="section section--light board">
+  <div class="container">
+    <h2 class="centered-heading h-reg board__heading">Our Board</h2>
+    {% set items = widgets['about:d50a38b'].items %}{% set prefix = 'board' %}{% include "partials/adv-accordion.njk" %}
+  </div>
+</section>
+
+<section class="section section--light pubs">
+  <div class="container">
+    <h2 class="centered-heading h-reg">Featured Publications</h2>
+    <div class="htabs" data-tabs>
+      <div class="htabs__list" role="tablist" aria-label="Featured publications">
+        {% for t in widgets['about:367f1e67'].items %}
+        <button class="htabs__tab{% if loop.first %} is-active{% endif %}" role="tab" id="pub-tab-{{ loop.index }}" aria-controls="pub-panel-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}">{{ t.title }}</button>
+        {% endfor %}
+      </div>
+      <div class="htabs__panels">
+        {% for t in widgets['about:367f1e67'].items %}
+        <div class="htabs__panel{% if loop.first %} is-active{% endif %}" role="tabpanel" id="pub-panel-{{ loop.index }}" aria-labelledby="pub-tab-{{ loop.index }}"{% if not loop.first %} hidden{% endif %}>{{ t.html | html | safe }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

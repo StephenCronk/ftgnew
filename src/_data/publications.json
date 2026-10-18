@@ -1,0 +1,51 @@
+{
+ "publication-1": {
+  "title": "Publication #1",
+  "images": [
+   "/assets/img/1.webp",
+   "/assets/img/2.webp"
+  ],
+  "width": "791"
+ },
+ "publication-2": {
+  "title": "Publication #2",
+  "images": [
+   "/assets/img/FTG_2025v3_1.webp",
+   "/assets/img/FTG_2025v3_2.webp",
+   "/assets/img/FTG_2025v3_3.webp",
+   "/assets/img/FTG_2025v3_4.webp",
+   "/assets/img/FTG_2025v3_5.webp",
+   "/assets/img/FTG_2025v3_6.webp",
+   "/assets/img/FTG_2025v3_7.webp",
+   "/assets/img/FTG_2025v3_8.webp",
+   "/assets/img/FTG_2025v3_9.webp",
+   "/assets/img/FTG_2025v3_10.webp",
+   "/assets/img/FTG_2025v3_11.webp",
+   "/assets/img/FTG_2025v3_12.webp",
+   "/assets/img/FTG_2025v3_13.webp",
+   "/assets/img/FTG_2025v3_14.webp"
+  ],
+  "width": "792"
+ },
+ "publication-3": {
+  "title": "publication #3",
+  "images": [
+   "/assets/img/mf_Page_1.webp",
+   "/assets/img/mf_Page_2.webp"
+  ],
+  "width": "791"
+ },
+ "publication-4": {
+  "title": "Publication #4",
+  "images": [
+   "/assets/img/CBC_Page_1.webp",
+   "/assets/img/CBC_Page_2.webp",
+   "/assets/img/CBC_Page_3.webp",
+   "/assets/img/CBC_Page_4.webp",
+   "/assets/img/CBC_Page_5.webp",
+   "/assets/img/CBC_Page_6.webp",
+   "/assets/img/CBC_Page_7.webp"
+  ],
+  "width": "791"
+ }
+}

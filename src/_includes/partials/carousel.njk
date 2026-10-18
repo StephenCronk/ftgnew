@@ -1,0 +1,22 @@
+{#- expects items (testimonial items), cols (2), scroll (1|2), variant ('review'|'logo'), prefix -#}
+<div class="carousel carousel--{{ variant }}" data-carousel data-cols="{{ cols or 2 }}" data-scroll="{{ scroll or 1 }}">
+  <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" width="30" height="30"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M15 4 7 12l8 8"/></svg></button>
+  <div class="carousel__viewport">
+    <div class="carousel__track">
+    {% for it in items %}
+      <div class="carousel__slide">
+        <div class="tm">
+          <div class="tm__card">
+            {% if it.title %}<div class="tm__title">{{ it.title }}</div>{% endif %}
+            {% if it.rating %}<div class="tm__rating" aria-label="{{ it.rating }} out of 5 stars">{% for i in range(0, it.rating) %}<span>★</span>{% endfor %}</div>{% endif %}
+            <div class="tm__content">{{ it.html | safe }}</div>
+          </div>
+          {% if it.name %}<div class="tm__meta">{{ it.name }}</div>{% endif %}
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+  <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" width="30" height="30"><path fill="none" stroke="currentColor" stroke-width="1.5" d="m9 4 8 8-8 8"/></svg></button>
+  <div class="carousel__dots" role="tablist"></div>
+</div>

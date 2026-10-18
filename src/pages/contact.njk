@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+title: Contact
+permalink: /contact/
+pageId: contact
+pageCss: contact
+---
+<section class="page-hero page-hero--contact">
+  <div class="page-hero__inner"><h1 class="page-hero__title">Contact Us</h1></div>
+</section>
+
+<div class="anchor" id="patients"></div>
+<section class="section contact-block" id="forpatientsvolunteers">
+  <div class="container">
+    <h3 class="contact-block__heading">For patients or Volunteers:</h3>
+    <div class="contact-grid">
+      <div class="contact-grid__col contact-grid__col--text">
+        <h4 class="h-reg">Patients:</h4>
+        <p>Please send us an email to begin the screening process.<br>Messages are returned during clinic hours <strong>only</strong>.<br>All patients must be approved before any appointments are scheduled.</p>
+        <h4 class="h-reg">Volunteers:</h4>
+        <p>Please send us an email at your preferred location (Scarborough or Rexdale) noting your availability, or to the General Inquiries address for any questions.</p>
+        <p>*Email only outside clinic hours.</p>
+      </div>
+      <div class="contact-grid__col contact-grid__col--info">
+        <h2 class="h-reg">Scarborough, ON</h2>
+        <a class="ibox" href="mailto:urbandental@ccrihc.org"><span class="ibox__icon">{% include "partials/icons/envelope.svg" %}</span><span class="ibox__text">urbandental@ccrihc.ORG</span></a>
+        <a class="ibox" href="mailto:urbandental@ccrihc.org"><span class="ibox__icon">{% include "partials/icons/phone.svg" %}</span><span class="ibox__text">416-289-4349 (Call and Text)</span></a>
+        <a class="ibox" href="mailto:urbandental@ccrihc.org"><span class="ibox__icon">{% include "partials/icons/clock.svg" %}</span><span class="ibox__text">Mon - Fri: 9 AM - 2 PM</span></a>
+        <h2 class="h-reg contact-grid__h2--pad">Rexdale, ON</h2>
+        <a class="ibox" href="mailto:rexdale@fillingthegap.ca"><span class="ibox__icon">{% include "partials/icons/envelope.svg" %}</span><span class="ibox__text">rexdale@fillingthegap.ca (EMAIL ONLY)</span></a>
+        <a class="ibox" href="mailto:urbandental@ccrihc.org"><span class="ibox__icon">{% include "partials/icons/phone.svg" %}</span><span class="ibox__text">416-748-4689</span></a>
+        <a class="ibox" href="mailto:urbandental@ccrihc.org"><span class="ibox__icon">{% include "partials/icons/clock.svg" %}</span><span class="ibox__text">tues, Thurs: 4 - 8 PM<br>Sat: 9 AM - 1 PM</span></a>
+        <h2 class="h-reg">General Inquiries</h2>
+        <a class="ibox" href="mailto:info@fillingthegap.ca"><span class="ibox__icon">{% include "partials/icons/envelope.svg" %}</span><span class="ibox__text">Info@fillingthegap.ca</span></a>
+      </div>
+      <div class="contact-grid__col contact-grid__col--maps">
+        <iframe title="Map: 4158 Sheppard Ave E" loading="lazy" src="https://maps.google.com/maps?q=4158%20Sheppard%20Ave%20E&amp;t=m&amp;z=15&amp;output=embed&amp;iwloc=near" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe title="Map: 21 Panorama Court, Etobicoke" loading="lazy" src="https://maps.google.com/maps?q=21%20Panorama%20Court%2C%20Etobicoke&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="anchor" id="donors"></div>
+<section class="section contact-block contact-block--donors">
+  <div class="container">
+    <h3 class="contact-block__heading contact-block__heading--donors">For Donors or sponsors:</h3>
+    <div class="donor-grid">
+      <div class="donor-grid__col">
+        <h4 class="h-reg">Interested in Donating?</h4>
+        <p>All donations go towards providing affordable dental care in the Greater Toronto Area to those in need. If you have any questions on how you can donate, become a sponsor, or the process, please contact us by email. Charitable receipts can be provided upon request for donations above $20.</p>
+      </div>
+      <div class="donor-grid__col donor-grid__col--right">
+        <h2 class="h-reg">Talk To Us</h2>
+        <a class="ibox ibox--bold" href="mailto:info@fillingthegap.ca"><span class="ibox__icon">{% include "partials/icons/envelope.svg" %}</span><span class="ibox__text">INFO@fillingthegap.ca</span></a>
+        <h4 class="h-reg">We're on payPal</h4>
+        <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="business" value="info@fillingthegap.ca">
+          <input type="hidden" name="cmd" value="_donations">
+          <input type="hidden" name="currency_code" value="CAD">
+          <input type="hidden" name="item_name" value="Filling the Gap Dental Outreach">
+          <button type="submit" class="paypal__btn" aria-label="Donate with PayPal"><svg viewBox="0 0 140 36" width="140" height="36" aria-hidden="true"><defs><linearGradient id="ppg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd25c"/><stop offset="1" stop-color="#f7a814"/></linearGradient></defs><rect x=".5" y=".5" width="139" height="35" rx="5" fill="url(#ppg)" stroke="#d29c22"/><text x="12" y="23" font-family="Arial, sans-serif" font-size="13" fill="#1b2b4a">Donate with</text><text x="86" y="24" font-family="Verdana, Arial, sans-serif" font-size="16" font-style="italic" font-weight="700" fill="#003087">Pay</text><text x="111" y="24" font-family="Verdana, Arial, sans-serif" font-size="16" font-style="italic" font-weight="700" fill="#009cde">Pal</text></svg></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section follow">
+  <div class="container">
+    <h3 class="contact-block__heading follow__heading">Follow Us</h3>
+    <div class="social">
+      <a class="social__btn social__btn--fb" href="{{ site.facebook }}" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 320 512" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+      <a class="social__btn social__btn--ig" href="{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 448 512" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+      <a class="social__btn social__btn--li" href="{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 448 512" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a>
+    </div>
+  </div>
+</section>

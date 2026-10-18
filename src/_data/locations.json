@@ -1,0 +1,20 @@
+[
+  {
+    "id": "scarborough",
+    "name": "Filling The Gap Scarborough",
+    "shortName": "Scarborough, ON",
+    "address": "4158 Sheppard Ave E, Scarborough, ON M1S 1T3",
+    "email": "urbandental@ccrihc.org",
+    "phone": "416-289-4349",
+    "hours": ["Mon-Fri 9AM - 2PM"]
+  },
+  {
+    "id": "rexdale",
+    "name": "Filling The Gap Rexdale",
+    "shortName": "Rexdale, ON",
+    "address": "21 Panorama Court, Toronto, ON M9V 4E3",
+    "email": "rexdale@fillingthegap.ca",
+    "phone": "416-748-4689",
+    "hours": ["Tues, Thurs 4-8PM", "Sat 9AM-1PM"]
+  }
+]

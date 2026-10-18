@@ -1,0 +1,23 @@
+:root {
+  --navy: #00406a;
+  --cyan: #00afd1;
+  --light: #e4e7ed;
+  --blue-mid: #005e9d;
+  --white: #ffffff;
+  --black: #000000;
+  --grey-text: #4b4f58;
+  --grey-bg: #f6f7f8;
+  --card-grey: #f1f1f1;
+  --footer-text: #2c4961;
+  --cookie: #002c44;
+  --slate: #54595f;
+
+  --font-body: 'Quicksand', sans-serif;
+  --font-slab: 'Arvo', serif;
+  --font-display: 'Alfa Slab One', display, serif;
+  --font-rslab: 'Roboto Slab', serif;
+  --font-roboto: 'Roboto', sans-serif;
+
+  --container: 1140px;
+  --gutter: 20px;
+}

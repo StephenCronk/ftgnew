@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <div class="site-footer__strip"></div>
+  <div class="site-footer__inner">
+    <nav class="footer-nav" aria-label="Footer Navigation">
+      <ul>
+        {% for item in nav.footer %}
+        <li><a href="{{ item.href | url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% for loc in locations %}
+    <div class="footer-location">
+      <h6 class="footer-location__title">{{ loc.name }}</h6>
+      <ul class="footer-location__list">
+        <li>{{ loc.address }}</li>
+        <li>{{ loc.email }}</li>
+        <li>{{ loc.phone }}</li>
+        {% for h in loc.hours %}<li>{{ h }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+    <div class="footer-spacer"></div>
+    <div class="footer-legal">
+      <p>Canadian Charitable Registration #{{ site.charityNumber }}</p>
+      <p>Copyright &copy; {{ site.copyrightYear }} {{ site.name }}</p>
+    </div>
+  </div>
+</footer>

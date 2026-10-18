@@ -1,0 +1,9 @@
+{#- EAEL advanced accordion: expects items [{title, html}], prefix; first item open -#}
+<div class="advacc" data-accordion data-accordion-single>
+{% for it in items %}
+  <div class="acc__item advacc__item{% if loop.first %} is-open{% endif %}">
+    <h3 class="advacc__heading"><button class="acc__trigger advacc__trigger" type="button" id="{{ prefix }}-t{{ loop.index }}" aria-expanded="{{ 'true' if loop.first else 'false' }}" aria-controls="{{ prefix }}-p{{ loop.index }}"><span class="advacc__pm" aria-hidden="true"></span><span class="advacc__title">{{ it.title }}</span><span class="advacc__chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="2.5" d="m9 5 7 7-7 7"/></svg></span></button></h3>
+    <div class="acc__panel advacc__panel" id="{{ prefix }}-p{{ loop.index }}" role="region" aria-labelledby="{{ prefix }}-t{{ loop.index }}"><div class="advacc__content">{{ it.html | html | safe }}</div></div>
+  </div>
+{% endfor %}
+</div>

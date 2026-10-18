@@ -1,0 +1,8 @@
+.page-hero--privacy { background-image: url('/assets/img/teethBkg.webp'); background-size: auto; background-repeat: repeat; }
+.privacy { padding: 57px 0 50px; }
+.privacy__body { color: var(--light); font-size: 20px; line-height: 1.7; }
+.privacy__body h3 { color: var(--light); font-size: 30px; margin: 1.2em 0 .5em; text-transform: none; }
+.privacy__body hr { border: 0; border-top: 1px solid rgba(228,231,237,.3); margin: 24px 0; }
+.privacy__body a { color: var(--cyan); text-decoration: underline; }
+.privacy__body ul { padding-left: 28px; margin: 0 0 1em; }
+.privacy__body li p { margin: 0 0 .5em; }
