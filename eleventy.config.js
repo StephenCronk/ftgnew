@@ -11,6 +11,8 @@ export default function (eleventyConfig) {
 
   // Prefix root-relative href/src inside stored HTML fragments with the path prefix (GitHub Pages project URLs).
   const prefix = (process.env.PATH_PREFIX || '/').replace(/\/$/, '');
+  // NOINDEX=1 marks the dev preview so search engines skip it.
+  eleventyConfig.addGlobalData('noindex', process.env.NOINDEX === '1');
   eleventyConfig.addFilter('html', (str) => prefix ? String(str).replace(/(href|src)="\/(?!\/)/g, `$1="${prefix}/`) : str);
 
   return {

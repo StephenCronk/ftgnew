@@ -27,9 +27,17 @@ Originals for images live in `src/assets/img-src/` (git-ignored). Drop a new ori
 
 ## Deploy
 
-Pushing to `main` runs `.github/workflows/pages.yml`, which builds the site and deploys it to GitHub Pages. Set the repository's Pages source to **GitHub Actions**. The workflow passes the correct `PATH_PREFIX` automatically, so the same build works at `https://<user>.github.io/ftgnew/` and at a custom domain.
+There are two environments.
 
-To go live on `fillingthegap.ca`: add a `CNAME` file containing `fillingthegap.ca` to `src/static/`, set the custom domain in the repo's Pages settings, and point the domain's A/AAAA records at GitHub Pages. Leave the MX records alone (Google Workspace mail).
+- **Dev preview: GitHub Pages.** Every push to `main` runs `.github/workflows/pages.yml` and updates `https://stephencronk.github.io/ftgnew/`. The preview build sets `NOINDEX=1`, so every page carries a `noindex` tag and stays out of search engines.
+- **Live site: Hostinger.** `.github/workflows/deploy-hostinger.yml` only runs when started by hand from the Actions tab. It builds for the root domain, adds `deploy/hostinger/.htaccess`, checks the build, and syncs `_site/` to `public_html/` over FTPS. It only uploads changed files and deletes files it previously uploaded that no longer exist.
+
+The Hostinger workflow needs three repository secrets: `FTP_SERVER`, `FTP_USERNAME` and `FTP_PASSWORD`. The run options are:
+
+- **Dry run** lists what would change without touching the server.
+- **Clean slate** deletes everything in `public_html` before uploading. Use it once for the first deploy, to remove the old WordPress files, and only after downloading a backup in hPanel.
+
+DNS stays at Hostinger. Do not touch the MX records, which carry Google Workspace mail. After a deploy, purge the Hostinger CDN cache if the old content still shows.
 
 ## Phase 2
 

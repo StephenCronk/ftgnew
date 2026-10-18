@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Preview on GitHub Pages (dev site)
 
 on:
   push:
@@ -31,6 +31,8 @@ jobs:
         env:
           # Project sites live under /<repo>/; a custom domain or user site uses "/".
           PATH_PREFIX: ${{ steps.pages.outputs.base_path }}/
+          # Keep the preview out of search engines; the live site is on Hostinger.
+          NOINDEX: "1"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
