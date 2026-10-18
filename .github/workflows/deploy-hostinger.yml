@@ -10,7 +10,7 @@ on:
         type: boolean
         default: false
       clean_slate:
-        description: "DANGER: delete everything in public_html before uploading. First deploy only, after taking a backup."
+        description: "DANGER: delete everything in the site folder (public_html) before uploading. First deploy only, after taking a backup."
         type: boolean
         default: false
 
@@ -62,7 +62,8 @@ jobs:
           # connection is encrypted but the certificate name is not checked.
           security: loose
           local-dir: ./_site/
-          server-dir: public_html/
+          # The FTP account opens directly in the site's public_html, so upload to its root.
+          server-dir: ./
           dry-run: ${{ inputs.dry_run }}
           dangerous-clean-slate: ${{ inputs.clean_slate }}
           exclude: |

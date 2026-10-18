@@ -13,3 +13,8 @@ DirectoryIndex index.html
   ExpiresByType image/jpeg "access plus 30 days"
   ExpiresByType image/svg+xml "access plus 30 days"
 </IfModule>
+
+# The deploy action keeps its sync record here; don't serve it.
+<Files ".ftp-deploy-sync-state.json">
+  Require all denied
+</Files>
