@@ -18,7 +18,7 @@
 
 .impact { background: var(--cyan); }
 .impact__head { text-align: center; padding: 0; }
-.impact__title { margin: 0; font-size: 59px; color: var(--navy); font-weight: 700; display: inline-flex; align-items: baseline; gap: 14px; padding: 10px 0; text-transform: none; }
+.impact__title { margin: 0; font-size: 59px; color: var(--navy); font-weight: 400; display: inline-flex; align-items: baseline; gap: 14px; padding: 10px 0; text-transform: none; }
 .impact__hl { position: relative; display: inline-block; padding: 10px; }
 .impact__hl span { position: relative; z-index: 2; }
 .impact__hl svg { position: absolute; left: 0; bottom: -4px; width: 100%; height: 90%; z-index: 1; fill: none; stroke: var(--light); stroke-width: 10px; }

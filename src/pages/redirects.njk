@@ -1,0 +1,25 @@
+---
+pagination:
+  data: redirects
+  size: 1
+  alias: r
+redirects:
+  - from: /support/
+    to: /elementor-1654/
+  - from: /privacy/
+    to: /elementor-4058/
+permalink: "{{ r.from }}"
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url={{ r.to | url }}">
+<link rel="canonical" href="{{ r.to | url }}">
+<title>Redirecting - {{ site.name }}</title>
+</head>
+<body>
+<p><a href="{{ r.to | url }}">Continue to {{ site.name }}</a></p>
+</body>
+</html>

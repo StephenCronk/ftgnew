@@ -1,8 +1,8 @@
-{#- expects items [{n,label}] -#}
+{#- expects items [{n,label,prefix?}] -#}
 <div class="counters">
 {% for c in items %}
   <div class="counter">
-    <div class="counter__n"><span data-count="{{ c.n }}">{{ c.n }}</span></div>
+    <div class="counter__n">{{ c.prefix }}<span data-count="{{ c.n }}">{{ c.n | int | localeNumber }}</span></div>
     <h3 class="counter__label">{{ c.label }}</h3>
   </div>
 {% endfor %}

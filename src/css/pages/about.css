@@ -11,7 +11,7 @@
 
 .impact-about { background: var(--navy); padding: 0 20px; }
 .impact-about__box { background: var(--cyan); padding: 30px 0 0; }
-.impact-about__heading { text-align: center; color: var(--navy); font-size: 72px; font-weight: 700; margin: 0 0 50px; line-height: 1.25; }
+.impact-about__heading { text-align: center; color: var(--navy); font-size: 72px; font-weight: 400; margin: 0 0 50px; line-height: 1.25; }
 .impact-about .counters { padding-bottom: 100px; }
 
 .quote { padding: 0; }

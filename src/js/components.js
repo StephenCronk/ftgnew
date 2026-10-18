@@ -48,7 +48,8 @@
     });
   });
 
-  // Count-up numbers: <span data-count="1849">0</span>
+  // Count-up numbers: <span data-count="1849">0</span>, shown with thousands separators
+  function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
   var counters = document.querySelectorAll('[data-count]');
   if (counters.length && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -56,12 +57,12 @@
         if (!en.isIntersecting) return;
         var el = en.target, end = parseInt(el.getAttribute('data-count'), 10), t0 = null, dur = 2000;
         io.unobserve(el);
-        function step(ts) { if (!t0) t0 = ts; var p = Math.min((ts - t0) / dur, 1); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); }
+        function step(ts) { if (!t0) t0 = ts; var p = Math.min((ts - t0) / dur, 1); el.textContent = fmt(Math.round(end * (1 - Math.pow(1 - p, 3)))); if (p < 1) requestAnimationFrame(step); }
         requestAnimationFrame(step);
       });
     }, { threshold: 0.4 });
     counters.forEach(function (c) { c.textContent = '0'; io.observe(c); });
-  } else { counters.forEach(function (c) { c.textContent = c.getAttribute('data-count'); }); }
+  } else { counters.forEach(function (c) { c.textContent = fmt(c.getAttribute('data-count')); }); }
 
   // Read more / collapse: button[data-readmore="#id"]
   document.querySelectorAll('[data-readmore]').forEach(function (btn) {

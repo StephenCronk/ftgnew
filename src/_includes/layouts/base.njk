@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="{{ '/css/components.css' | url }}">
 {% if pageCss %}<link rel="stylesheet" href="{{ ('/css/pages/' + pageCss + '.css') | url }}">{% endif %}
 </head>
-<body class="page-{{ pageId or 'default' }}{% if arvoBold %} arvo-bold{% endif %}">
+<body class="page-{{ pageId or 'default' }}">
 <a class="skip-link" href="#content">Skip to content</a>
 {% include "partials/header.njk" %}
 <main id="content">

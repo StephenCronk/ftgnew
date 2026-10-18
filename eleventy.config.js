@@ -8,6 +8,7 @@ export default function (eleventyConfig) {
 
   // Ordered footer nav differs from header nav; both come from _data/nav.json.
   eleventyConfig.addFilter('isActive', (href, pageUrl) => href === pageUrl);
+  eleventyConfig.addFilter('localeNumber', (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','));
 
   // Prefix root-relative href/src inside stored HTML fragments with the path prefix (GitHub Pages project URLs).
   const prefix = (process.env.PATH_PREFIX || '/').replace(/\/$/, '');

@@ -24,6 +24,7 @@
    },
    {
     "n": "695337",
+    "prefix": "$",
     "label": "Saved Toronto Public Health"
    }
   ]
@@ -45,7 +46,7 @@
    },
    {
     "title": "Dr. Cherry To, Volunteer Dentist",
-    "html": "<p><img src=\"/assets/img/Dr.Cherry1.webp\" alt=\"\"></p><p><strong>Since graduating as a dentist from Western University in 2006, I have seen how toothaches, broken</strong> <strong>teeth, and dental infections can severely impact a person’s life; add to that barriers such as not having a</strong> <strong>regular dentist, financial constraints, taking time off from work to access care and it can leave an</strong> <strong>individual overwhelmed. My hope is that people of all backgrounds would be able to receive dental care</strong> <strong>in a timely and effective manner through our work at Filing the Gap. I believe God calls us to love and</strong> <strong>care for everyone using our gifts and skills, and I am pleased to participate as a volunteer and on the</strong> <strong>board level to fulfill its mission.</strong></p>"
+    "html": "<p><img src=\"/assets/img/Dr.Cherry1.webp\" alt=\"\"></p><p><strong>Since graduating as a dentist from Western University in 2006, I have seen how toothaches, broken</strong> <strong>teeth, and dental infections can severely impact a person’s life; add to that barriers such as not having a</strong> <strong>regular dentist, financial constraints, taking time off from work to access care and it can leave an</strong> <strong>individual overwhelmed. My hope is that people of all backgrounds would be able to receive dental care</strong> <strong>in a timely and effective manner through our work at Filling the Gap. I believe God calls us to love and</strong> <strong>care for everyone using our gifts and skills, and I am pleased to participate as a volunteer and on the</strong> <strong>board level to fulfill its mission.</strong></p>"
    }
   ]
  },
@@ -213,6 +214,7 @@
    },
    {
     "n": "695337",
+    "prefix": "$",
     "label": "Saved Toronto Public Health"
    }
   ]
@@ -372,7 +374,7 @@
     "job": "",
     "title": "",
     "rating": 0,
-    "html": "<p><a href=\"https://torontofoundation.ca/\"><img src=\"/assets/img/TF-Logo.webp\" alt=\"\"></a></p><p>The Toronto Foundation has been fundamental in connecting us with sponsor organizations that have been willing to give is grants to help us achieve our goals at Filling the Gap. We are very grateful to them for their support.</p>"
+    "html": "<p><a href=\"https://torontofoundation.ca/\"><img src=\"/assets/img/TF-Logo.webp\" alt=\"\"></a></p><p>The Toronto Foundation has been fundamental in connecting us with sponsor organizations that have been willing to give us grants to help us achieve our goals at Filling the Gap. We are very grateful to them for their support.</p>"
    },
    {
     "name": "",
@@ -459,7 +461,7 @@
    },
    {
     "title": "Dr. Cherry To, Volunteer Dentist",
-    "html": "<p><img src=\"/assets/img/Dr.Cherry1.webp\" alt=\"\"></p><p><strong>Since graduating as a dentist from Western University in 2006, I have seen how toothaches, broken</strong> <strong>teeth, and dental infections can severely impact a person’s life; add to that barriers such as not having a</strong> <strong>regular dentist, financial constraints, taking time off from work to access care and it can leave an</strong> <strong>individual overwhelmed. My hope is that people of all backgrounds would be able to receive dental care</strong> <strong>in a timely and effective manner through our work at Filing the Gap. I believe God calls us to love and</strong> <strong>care for everyone using our gifts and skills, and I am pleased to participate as a volunteer and on the</strong> <strong>board level to fulfill its mission.</strong></p>"
+    "html": "<p><img src=\"/assets/img/Dr.Cherry1.webp\" alt=\"\"></p><p><strong>Since graduating as a dentist from Western University in 2006, I have seen how toothaches, broken</strong> <strong>teeth, and dental infections can severely impact a person’s life; add to that barriers such as not having a</strong> <strong>regular dentist, financial constraints, taking time off from work to access care and it can leave an</strong> <strong>individual overwhelmed. My hope is that people of all backgrounds would be able to receive dental care</strong> <strong>in a timely and effective manner through our work at Filling the Gap. I believe God calls us to love and</strong> <strong>care for everyone using our gifts and skills, and I am pleased to participate as a volunteer and on the</strong> <strong>board level to fulfill its mission.</strong></p>"
    }
   ]
  },
