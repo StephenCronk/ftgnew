@@ -56,7 +56,7 @@ arvoBold: true
       </div>
       <div class="tabs__panels">
         {% for n in news %}
-        <div class="tabs__panel{% if loop.first %} is-active{% endif %}" role="tabpanel" id="news-panel-{{ loop.index }}" aria-labelledby="news-tab-{{ loop.index }}"{% if not loop.first %} hidden{% endif %}>{{ n.content | safe }}</div>
+        <div class="tabs__panel{% if loop.first %} is-active{% endif %}" role="tabpanel" id="news-panel-{{ loop.index }}" aria-labelledby="news-tab-{{ loop.index }}"{% if not loop.first %} hidden{% endif %}>{{ n.content | html | safe }}</div>
         {% endfor %}
       </div>
     </div>

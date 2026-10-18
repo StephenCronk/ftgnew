@@ -1,4 +1,4 @@
-.page-hero--contact { background-image: url('/assets/img/bg-5.webp'); }
+.page-hero--contact { background-image: url('../../assets/img/bg-5.webp'); }
 .contact-block { padding: 57px 0 0; }
 .contact-block__heading { text-align: center; color: var(--cyan); font-size: 30px; margin: 0 0 40px; text-transform: uppercase; font-weight: 700; }
 .contact-block__heading--donors { margin-bottom: 60px; }

@@ -1,4 +1,4 @@
-.page-hero--support { background-image: url('/assets/img/ourworkBaNNER.webp'); }
+.page-hero--support { background-image: url('../../assets/img/ourworkBaNNER.webp'); }
 .lives--support { padding: 70px 0 0; }
 .lives__heading--thin { font-weight: 400; padding: 0; margin: 0 0 20px; font-size: 72px; text-align: center; color: var(--cyan); }
 .lives__note--h6 { font-family: var(--font-slab); font-size: 15px; font-weight: 400; color: var(--cyan); text-align: center; margin: 0; }
@@ -22,7 +22,7 @@
 .impact__hl { position: relative; display: inline-block; padding: 10px; }
 .impact__hl span { position: relative; z-index: 2; }
 .impact__hl svg { position: absolute; left: 0; bottom: -4px; width: 100%; height: 90%; z-index: 1; fill: none; stroke: var(--light); stroke-width: 10px; }
-.impact__body { background: var(--cyan) url('/assets/img/teethBkg.webp') center / auto repeat; padding-bottom: 60px; }
+.impact__body { background: var(--cyan) url('../../assets/img/teethBkg.webp') center / auto repeat; padding-bottom: 60px; }
 
 .who { background: var(--navy); padding-bottom: 100px; }
 .who__heading { color: #6ec1e4; font-size: 72px; font-weight: 400; margin: 0 0 20px; padding: 100px 0 0; }

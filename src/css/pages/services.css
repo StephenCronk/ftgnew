@@ -1,4 +1,4 @@
-.page-hero--services { background-image: url('/assets/img/3-2.webp'); }
+.page-hero--services { background-image: url('../../assets/img/3-2.webp'); }
 .gap { padding: 0; }
 .gap__cols { display: flex; align-items: center; }
 .gap__text { flex: 0 0 50%; padding: 60px 10px 60px 10px; }
