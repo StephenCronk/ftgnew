@@ -32,6 +32,12 @@
 /* Scroll reveal: home.js adds .reveal-on to <html> and .is-in as each block enters the viewport. */
 .reveal-on [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 .reveal-on [data-reveal].is-in { opacity: 1; transform: none; }
+/* Mission: the logo fades in first, then the text. */
+.reveal-on .intro__inner[data-reveal] { opacity: 1; transform: none; }
+.reveal-on .intro__inner > * { opacity: 0; transition: opacity 1s var(--ease), transform 1s var(--ease); }
+.reveal-on .intro__logo { transform: scale(.9); }
+.reveal-on .intro__text { transform: translateY(24px); transition-delay: .5s; }
+.reveal-on .intro__inner.is-in > * { opacity: 1; transform: none; }
 
 /* ---- Video hero ---- */
 .vhero {
