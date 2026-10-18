@@ -10,6 +10,16 @@ npm run dev        # http://localhost:8080, rebuilds on save
 npm run build      # writes the site to _site/
 ```
 
+Checks:
+
+```bash
+npm run audit           # build for the live domain and run every pre-ship check
+npm run check:preview   # verify the deployed GitHub Pages preview
+npm run check:live      # verify fillingthegap.ca after a Hostinger deploy
+```
+
+Claude Code users can run the whole change, check, preview and publish loop with the `/ftg-site` skill in `.claude/skills/ftg-site/`.
+
 ## Layout
 
 | Path | What |
