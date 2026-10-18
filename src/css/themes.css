@@ -1,0 +1,61 @@
+/* Alternative themes for the preview's floating theme picker (partials/theme-picker.njk).
+   Harbour, the default, is tokens.css itself; each theme here only overrides tokens. */
+:root[data-theme="sunrise"] {
+  --navy: #1f3a5f; --ink: #1e2a45; --navy-deep: #141d33; --cookie: #141d33;
+  --cyan: #f4b860; --cyan-dark: #a8501a; --cyan-soft: #fcefdc;
+  --light: #ece7df; --surface: #ffffff; --surface-tint: #fbf8f3; --grey-bg: #fbf8f3;
+  --footer-text: #3a4560; --text-muted: #5d6578;
+  --font-slab: 'Fraunces', Georgia, serif; --font-body: 'Nunito Sans', system-ui, sans-serif; --font-roboto: var(--font-body);
+  --heading-weight: 600; --heading-tracking: -.01em; --radius: 18px;
+}
+:root[data-theme="evergreen"] {
+  --navy: #12483f; --ink: #0f3a35; --navy-deep: #0a2824; --cookie: #0a2824;
+  --cyan: #8ddcbf; --cyan-dark: #157a5d; --cyan-soft: #e0f3ea;
+  --light: #e3ece8; --surface: #ffffff; --surface-tint: #f3f8f5; --grey-bg: #f3f8f5;
+  --footer-text: #2d4a43; --text-muted: #4c6660;
+  --font-slab: 'Outfit', system-ui, sans-serif; --font-body: 'Inter', system-ui, sans-serif; --font-roboto: var(--font-body);
+  --heading-weight: 600; --heading-tracking: -.015em; --radius: 14px;
+}
+:root[data-theme="slate"] {
+  --navy: #1c2b45; --ink: #18212c; --navy-deep: #10161f; --cookie: #10161f;
+  --cyan: #9cc8ff; --cyan-dark: #2458c4; --cyan-soft: #e6eefc;
+  --light: #e6e9ee; --surface: #ffffff; --surface-tint: #f5f6f8; --grey-bg: #f5f6f8;
+  --footer-text: #354258; --text-muted: #586377;
+  --font-slab: 'Plus Jakarta Sans', system-ui, sans-serif; --font-body: 'Plus Jakarta Sans', system-ui, sans-serif; --font-roboto: var(--font-body);
+  --heading-weight: 700; --heading-tracking: -.02em; --radius: 10px;
+}
+/* Sans and soft-serif headings need one weight throughout; eyebrow labels keep their own style. */
+:root[data-theme] :is(h1, h2, h3, h4, h5, h6):not(.intro__eyebrow) { font-weight: var(--heading-weight); letter-spacing: var(--heading-tracking); }
+:root[data-theme] :is(.counter__n, .counter__label) { font-family: var(--font-slab); }
+
+/* ---- Floating picker ---- */
+.theme-picker { position: fixed; z-index: 60; top: 50%; right: 0; display: flex; align-items: center; transform: translateY(-50%); font-family: 'Quicksand', sans-serif; }
+.theme-picker__tab {
+  display: grid; place-items: center; width: 46px; height: 46px; padding: 0;
+  border: 1px solid rgba(255, 255, 255, .25); border-right: 0; border-radius: 12px 0 0 12px;
+  background: var(--ink); color: #fff; box-shadow: 0 10px 28px -10px rgba(0, 0, 0, .5);
+}
+.theme-picker__tab:hover { background: var(--navy); }
+.theme-picker__panel {
+  width: 280px; margin-right: 10px; padding: 16px; border: 1px solid rgba(0, 0, 0, .08); border-radius: 16px;
+  background: #fff; color: #1b2430; box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .45);
+}
+.theme-picker__title { margin: 0 0 10px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #586377; }
+.theme-picker__list { display: grid; gap: 6px; list-style: none; }
+.theme-picker__option {
+  display: flex; align-items: center; gap: 12px; width: 100%; padding: 9px 10px;
+  border: 2px solid transparent; border-radius: 12px; background: none; color: inherit; text-align: left;
+  transition: background-color .2s, border-color .2s;
+}
+.theme-picker__option:hover { background: #f2f4f7; }
+.theme-picker__option[aria-pressed="true"] { border-color: #1b2430; background: #f2f4f7; }
+.theme-picker__swatch { display: flex; flex: 0 0 auto; }
+.theme-picker__swatch span { width: 20px; height: 20px; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px rgba(0, 0, 0, .12); }
+.theme-picker__swatch span + span { margin-left: -6px; }
+.theme-picker__name { display: block; font-size: 15px; font-weight: 700; line-height: 1.3; }
+.theme-picker__note { display: block; font-size: 12px; line-height: 1.35; color: #586377; }
+@media (max-width: 767px) {
+  .theme-picker__tab { width: 40px; height: 40px; }
+  .theme-picker__panel { width: min(280px, calc(100vw - 72px)); }
+}
+@media print { .theme-picker { display: none; } }

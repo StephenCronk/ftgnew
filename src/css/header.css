@@ -4,7 +4,7 @@
   background: var(--ink); color: #fff;
   transition: background-color .35s var(--ease), box-shadow .35s var(--ease);
 }
-.site-header.is-scrolled { box-shadow: 0 6px 24px rgba(0, 20, 36, .35); }
+.site-header.is-scrolled { box-shadow: 0 6px 24px color-mix(in srgb, var(--navy-deep) 35%, transparent); }
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
   max-width: 1320px; min-height: var(--header-h); margin: 0 auto; padding: 0 32px;
@@ -30,10 +30,10 @@
   background: var(--light); color: var(--navy); font-size: 13px; line-height: 1; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 700;
   transition: background-color .2s, transform .2s var(--ease), box-shadow .2s;
 }
-.btn-donate:hover { background: var(--cyan); color: var(--navy-deep); transform: translateY(-1px); box-shadow: 0 8px 20px -8px rgba(127, 212, 228, .6); }
+.btn-donate:hover { background: var(--cyan); color: var(--navy-deep); transform: translateY(-1px); box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--cyan) 60%, transparent); }
 
 /* Home: transparent over the hero until scrolled or the menu is open. */
-.site-header--overlay { position: fixed; left: 0; right: 0; background: linear-gradient(to bottom, rgba(0, 28, 48, .55), rgba(0, 28, 48, 0)); }
+.site-header--overlay { position: fixed; left: 0; right: 0; background: linear-gradient(to bottom, color-mix(in srgb, var(--navy-deep) 55%, transparent), color-mix(in srgb, var(--navy-deep) 0%, transparent)); }
 .site-header--overlay.is-scrolled, .site-header--overlay.is-open { background-color: var(--ink); }
 
 @media (max-width: 1240px) {

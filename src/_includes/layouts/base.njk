@@ -29,7 +29,19 @@
 <link rel="stylesheet" href="{{ '/css/footer.css' | url }}">
 <link rel="stylesheet" href="{{ '/css/components.css' | url }}">
 {% if pageCss %}<link rel="stylesheet" href="{{ ('/css/pages/' + pageCss + '.css') | url }}">{% endif %}
-</head>
+{% if themePicker %}<link rel="stylesheet" href="{{ '/css/themes.css' | url }}">
+<script>
+window.ftgApplyTheme = function (id) {
+  var themes = {{ themes | dump | safe }}, t = null, el = document.documentElement, link = document.getElementById('theme-fonts');
+  for (var i = 1; i < themes.length; i++) if (themes[i].id === id) t = themes[i];
+  if (!t) { el.removeAttribute('data-theme'); if (link) link.remove(); return; }
+  el.setAttribute('data-theme', t.id);
+  if (!link) { link = document.createElement('link'); link.rel = 'stylesheet'; link.id = 'theme-fonts'; document.head.appendChild(link); }
+  link.href = t.fonts;
+};
+try { var saved = localStorage.getItem('ftg-theme'); if (saved) window.ftgApplyTheme(saved); } catch (e) {}
+</script>
+{% endif %}</head>
 <body class="page-{{ pageId or 'default' }}">
 <a class="skip-link" href="#content">Skip to content</a>
 {% include "partials/header.njk" %}
@@ -38,8 +50,10 @@
 </main>
 {% include "partials/footer.njk" %}
 {% include "partials/cookie.njk" %}
+{% if themePicker %}{% include "partials/theme-picker.njk" %}{% endif %}
 <script src="{{ '/js/main.js' | url }}" defer></script>
 <script src="{{ '/js/components.js' | url }}" defer></script>
 {% if pageJs %}<script src="{{ ('/js/pages/' + pageJs + '.js') | url }}" defer></script>{% endif %}
+{% if themePicker %}<script src="{{ '/js/theme-picker.js' | url }}" defer></script>{% endif %}
 </body>
 </html>

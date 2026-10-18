@@ -2,7 +2,7 @@
 .page-hero--plain::before { display: none; }
 .mvg { padding: 0; }
 .mvg__cols { display: flex; align-items: center; }
-.mvg__left, .mvg__right { flex: 0 0 50%; padding: 39px; font-size: 15px; line-height: 2.25; color: #004d80; }
+.mvg__left, .mvg__right { flex: 0 0 50%; padding: 39px; font-size: 15px; line-height: 2.25; color: var(--navy); }
 .mvg__left h5 { color: var(--cyan-dark); font-size: 22px; margin: 0; line-height: 1.6; }
 .mvg__left p { margin: 0; }
 .mvg__right p { margin: 0 0 1.5em; }

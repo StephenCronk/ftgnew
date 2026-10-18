@@ -25,7 +25,7 @@
 .impact__body { background: var(--cyan-soft) url('../../assets/img/teethBkg-soft.webp') center / auto repeat; padding-bottom: 60px; }
 
 .who { background: var(--ink); padding-bottom: 100px; }
-.who__heading { color: #6ec1e4; font-size: 72px; font-weight: 400; margin: 0 0 20px; padding: 100px 0 0; }
+.who__heading { color: var(--cyan); font-size: 72px; font-weight: 400; margin: 0 0 20px; padding: 100px 0 0; }
 .who__sub { color: var(--cyan); font-size: 24px; font-weight: 400; margin: 24px 0 20px; }
 .who__note { font-size: 20px; color: var(--light); }
 
