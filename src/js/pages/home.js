@@ -32,14 +32,23 @@
     });
   }
 
-  // Mission logo: builds itself once, when the whole logo is on screen.
+  // Mission logo: builds itself when the whole logo is on screen, then again every 60 seconds.
+  // A replay that falls due while the logo is out of view waits until it is fully back.
   var logo = document.querySelector('[data-logo-anim]');
   if (logo && !reduce && hasIO) {
+    var inView = false, due = true;
+    function playLogo() {
+      due = false;
+      logo.classList.remove('is-playing');
+      logo.getBoundingClientRect(); // restart the CSS animations
+      logo.classList.add('is-playing');
+      setTimeout(function () { due = true; if (inView) playLogo(); }, 60000);
+    }
     logo.classList.add('is-armed');
-    var lio = new IntersectionObserver(function (entries) {
-      if (entries[0].intersectionRatio >= 0.98) { logo.classList.add('is-playing'); lio.disconnect(); }
-    }, { threshold: 0.98 });
-    lio.observe(logo);
+    new IntersectionObserver(function (entries) {
+      inView = entries[0].intersectionRatio >= 0.98;
+      if (inView && due) playLogo();
+    }, { threshold: 0.98 }).observe(logo);
   }
 
   // Parallax: the banner's video drifts slower than the page.

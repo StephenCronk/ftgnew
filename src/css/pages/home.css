@@ -54,7 +54,7 @@
 
 /* ---- Animated round logo ----
    Without JS or with reduced motion it is simply the finished logo. home.js adds .is-armed (every part hidden)
-   and then .is-playing once the whole logo is on screen; each animation starts from its own first frame. Brand colours stay fixed under all themes. */
+   and then .is-playing once the whole logo is on screen (and again every 60 s); each animation starts from its own first frame. Brand colours stay fixed under all themes. */
 .logo-anim { --lw: #fff; --lc: #00aed0; overflow: visible; }
 .logo-anim .la-white, .logo-anim .la-head--white, .logo-anim .la-top { fill: var(--lw); stroke: var(--lw); }
 .logo-anim .la-arcs, .logo-anim .la-heart, .logo-anim .la-body, .logo-anim .la-head--cyan, .logo-anim .la-bottom { fill: var(--lc); stroke: var(--lc); }
@@ -62,17 +62,17 @@
 .logo-anim .la-heart, .logo-anim .la-head, .logo-anim .la-letter { transform-box: fill-box; transform-origin: center; }
 .logo-anim.is-armed:not(.is-playing) path { opacity: 0; }
 /* The two figures and the arcs draw their outlines, then fill in. */
-.logo-anim.is-playing .la-draw { stroke-dasharray: 1; animation: la-draw var(--t, 1.5s) var(--ease) var(--d, 0s) both; }
-.la-white path:nth-child(2) { --d: .25s; }
-.la-arcs path { --t: 1.1s; --d: .5s; }
-.la-arcs path:nth-child(2), .la-arcs path:nth-child(3) { --d: .65s; }
-.la-body { --t: 1.3s; --d: .9s; }
+.logo-anim.is-playing .la-draw { stroke-dasharray: 1; animation: la-draw var(--t, 1.05s) var(--ease) var(--d, 0s) both; }
+.la-white path:nth-child(2) { --d: .18s; }
+.la-arcs path { --t: .77s; --d: .35s; }
+.la-arcs path:nth-child(2), .la-arcs path:nth-child(3) { --d: .46s; }
+.la-body { --t: .91s; --d: .63s; }
 /* The heart springs open, each head drops in and bounces, the letters pop in one at a time, then the heart beats. */
-.logo-anim.is-playing .la-heart { animation: la-pop .8s cubic-bezier(.34, 1.56, .64, 1) 1.3s both, la-beat 1s ease-in-out 3.6s; }
-.logo-anim.is-playing .la-head { animation: la-drop 1s linear var(--d, 1.4s) both; }
-.la-head--cyan { --d: 1.75s; }
-.logo-anim.is-playing .la-top .la-letter { animation: la-spin .6s cubic-bezier(.34, 1.56, .64, 1) calc(1s + var(--i) * 70ms) both; }
-.logo-anim.is-playing .la-bottom .la-letter { animation: la-rise .55s cubic-bezier(.34, 1.56, .64, 1) calc(2.2s + var(--i) * 50ms) both; }
+.logo-anim.is-playing .la-heart { animation: la-pop .56s cubic-bezier(.34, 1.56, .64, 1) .91s both, la-beat .7s ease-in-out 2.52s; }
+.logo-anim.is-playing .la-head { animation: la-drop .7s linear var(--d, .98s) both; }
+.la-head--cyan { --d: 1.23s; }
+.logo-anim.is-playing .la-top .la-letter { animation: la-spin .42s cubic-bezier(.34, 1.56, .64, 1) calc(.7s + var(--i) * 49ms) both; }
+.logo-anim.is-playing .la-bottom .la-letter { animation: la-rise .39s cubic-bezier(.34, 1.56, .64, 1) calc(1.54s + var(--i) * 35ms) both; }
 @keyframes la-draw {
   0% { stroke-dashoffset: 1; stroke-width: 2.5; fill-opacity: 0; }
   65% { stroke-dashoffset: 0; stroke-width: 2.5; fill-opacity: 0; }
