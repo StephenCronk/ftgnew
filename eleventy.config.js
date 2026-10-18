@@ -15,6 +15,8 @@ export default function (eleventyConfig) {
   const prefix = (process.env.PATH_PREFIX || '/').replace(/\/$/, '');
   // NOINDEX=1 marks the dev preview so search engines skip it.
   eleventyConfig.addGlobalData('noindex', process.env.NOINDEX === '1');
+  // Version tag on CSS/JS links so browsers fetch fresh copies after each deploy (GitHub Pages caches for 10 minutes).
+  eleventyConfig.addGlobalData('assetVersion', (process.env.GITHUB_SHA || Date.now().toString(36)).slice(0, 8));
   // Floating theme picker: preview builds only, or THEME_PICKER=1 to force it on.
   eleventyConfig.addGlobalData('themePicker', process.env.NOINDEX === '1' || process.env.THEME_PICKER === '1');
   eleventyConfig.addFilter('html', (str) => prefix ? String(str).replace(/(href|src)="\/(?!\/)/g, `$1="${prefix}/`) : str);

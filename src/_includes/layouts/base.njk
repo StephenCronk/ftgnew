@@ -25,13 +25,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap">
-<link rel="stylesheet" href="{{ '/css/tokens.css' | url }}">
-<link rel="stylesheet" href="{{ '/css/base.css' | url }}">
-<link rel="stylesheet" href="{{ '/css/header.css' | url }}">
-<link rel="stylesheet" href="{{ '/css/footer.css' | url }}">
-<link rel="stylesheet" href="{{ '/css/components.css' | url }}">
-{% if pageCss %}<link rel="stylesheet" href="{{ ('/css/pages/' + pageCss + '.css') | url }}">{% endif %}
-{% if themePicker %}<link rel="stylesheet" href="{{ '/css/themes.css' | url }}">
+<link rel="stylesheet" href="{{ '/css/tokens.css' | url }}?v={{ assetVersion }}">
+<link rel="stylesheet" href="{{ '/css/base.css' | url }}?v={{ assetVersion }}">
+<link rel="stylesheet" href="{{ '/css/header.css' | url }}?v={{ assetVersion }}">
+<link rel="stylesheet" href="{{ '/css/footer.css' | url }}?v={{ assetVersion }}">
+<link rel="stylesheet" href="{{ '/css/components.css' | url }}?v={{ assetVersion }}">
+{% if pageCss %}<link rel="stylesheet" href="{{ ('/css/pages/' + pageCss + '.css') | url }}?v={{ assetVersion }}">{% endif %}
+{% if themePicker %}<link rel="stylesheet" href="{{ '/css/themes.css' | url }}?v={{ assetVersion }}">
 <script>
 window.ftgApplyTheme = function (id) {
   var themes = {{ themes | dump | safe }}, t = null, el = document.documentElement, link = document.getElementById('theme-fonts');
@@ -53,9 +53,9 @@ try { var saved = localStorage.getItem('ftg-theme'); if (saved) window.ftgApplyT
 {% include "partials/footer.njk" %}
 {% include "partials/cookie.njk" %}
 {% if themePicker %}{% include "partials/theme-picker.njk" %}{% endif %}
-<script src="{{ '/js/main.js' | url }}" defer></script>
-<script src="{{ '/js/components.js' | url }}" defer></script>
-{% if pageJs %}<script src="{{ ('/js/pages/' + pageJs + '.js') | url }}" defer></script>{% endif %}
-{% if themePicker %}<script src="{{ '/js/theme-picker.js' | url }}" defer></script>{% endif %}
+<script src="{{ '/js/main.js' | url }}?v={{ assetVersion }}" defer></script>
+<script src="{{ '/js/components.js' | url }}?v={{ assetVersion }}" defer></script>
+{% if pageJs %}<script src="{{ ('/js/pages/' + pageJs + '.js') | url }}?v={{ assetVersion }}" defer></script>{% endif %}
+{% if themePicker %}<script src="{{ '/js/theme-picker.js' | url }}?v={{ assetVersion }}" defer></script>{% endif %}
 </body>
 </html>
