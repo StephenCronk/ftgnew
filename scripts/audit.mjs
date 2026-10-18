@@ -83,11 +83,16 @@ const unused = walk(imgDir)
   .filter((f) => !corpus.includes(basename(f, extname(f))))
   .map((f) => relative(root, f));
 fail('Images in src/assets/img that nothing references', unused);
+const videoDir = join(root, 'src/assets/video');
+const unusedVideo = existsSync(videoDir) ? walk(videoDir).filter((f) => !corpus.includes(basename(f))).map((f) => relative(root, f)) : [];
+fail('Videos in src/assets/video that nothing references', unusedVideo);
 
-// 6. Size guard: flag any single image over 400 KB.
-const big = walk(join(site, 'assets')).filter((f) => statSync(f).size > 400 * 1024)
-  .map((f) => `${relative(site, f)} (${Math.round(statSync(f).size / 1024)} KB)`);
-fail('Images over 400 KB (resize with scripts/build-images.mjs)', big);
+// 6. Size guard: flag any single image over 400 KB, and any video over 2 MB.
+const isVideo = (f) => /\.(mp4|webm)$/i.test(f);
+const kb = (f) => `${relative(site, f)} (${Math.round(statSync(f).size / 1024)} KB)`;
+const assetFiles = walk(join(site, 'assets'));
+fail('Images over 400 KB (resize with scripts/build-images.mjs)', assetFiles.filter((f) => !isVideo(f) && statSync(f).size > 400 * 1024).map(kb));
+fail('Videos over 2 MB (re-encode with ffmpeg, see README)', assetFiles.filter((f) => isVideo(f) && statSync(f).size > 2048 * 1024).map(kb));
 
 const total = files.reduce((n, f) => n + statSync(f).size, 0);
 console.log(`Built ${html.length} pages, ${files.length} files, ${(total / 1048576).toFixed(1)} MB.`);

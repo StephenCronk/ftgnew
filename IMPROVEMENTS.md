@@ -16,6 +16,8 @@ Phase 1 reproduces the live WordPress site as-is, including its mistakes. These 
 - `/support/` and `/privacy/` redirect to `/elementor-1654/` and `/elementor-4058/` (meta-refresh pages with a canonical link, so they work on GitHub Pages and Hostinger).
 - Large section headings use regular-weight Arvo on every page (Home and the two "Our Impact" headings were bold). Card titles, page banners and the Annual Report promo stay bold.
 - Checked mobile overflow at 390px: no page scrolls sideways in the rebuild; the About impact box and publication tabs fit.
+- Header (every page): sticky, slimmer, animated underline on the current page; menu button below 1100px. On Home it floats over the hero and turns solid on scroll.
+- Home redesigned: full-screen Toronto video hero (headline, mission line, Donate / Volunteer / Are You Eligible? buttons, 2025 impact numbers, pause button; poster only for reduced-motion or data-saver visitors), then restyled mission, before/after grid and video, news cards, CDCP cards and callout, 8-post Instagram grid with a Follow button, and an Annual Report banner. The old two-slide carousel, the dead "Click here" button and the Instagram "Load More" button were removed.
 
 ## Broken or odd links
 - **Home "CLICK HERE" button** in the CDCP section links to `#` (nowhere).
@@ -30,8 +32,7 @@ Phase 1 reproduces the live WordPress site as-is, including its mistakes. These 
 - The Accerta sponsor card and a second testimonial carousel on Services are hidden on desktop on the live site (`elementor-hidden-desktop`); they were left out here too.
 
 ## Design / UX
-- Instagram section is a static snapshot (20 posts as of 2026-10-18). Refresh manually or wire a feed service.
-- The "Load More" button under the Instagram grid just opens the profile.
+- Instagram section is a static snapshot (8 posts as of 2026-10-18). Refresh manually or wire a feed service.
 - Google Maps iframes load third-party scripts on Contact and Volunteers; consider static map images with links.
 - Images still lack alt text where the original had none.
 

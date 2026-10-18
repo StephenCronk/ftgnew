@@ -11,6 +11,8 @@
   --footer-text: #2c4961;
   --cookie: #002c44;
   --slate: #54595f;
+  --navy-deep: #002c44;
+  --cyan-dark: #008daa;
 
   --font-body: 'Quicksand', sans-serif;
   --font-slab: 'Arvo', serif;
@@ -20,4 +22,8 @@
 
   --container: 1140px;
   --gutter: 20px;
+  --header-h: 76px;
+  --radius: 16px;
+  --shadow: 0 18px 40px -22px rgba(0, 28, 48, .55);
+  --ease: cubic-bezier(.22, 1, .36, 1);
 }

@@ -31,6 +31,7 @@ Claude Code users can run the whole change, check, preview and publish loop with
 | `src/css/` | `tokens.css` (colours/fonts), `base.css`, `header.css`, `footer.css`, `components.css`, `pages/<page>.css`. |
 | `src/js/` | `main.js` (menu, cookie bar), `components.js` (sliders, tabs, accordions, carousels, counters, lazy YouTube), `pages/home.js`. |
 | `src/assets/img/` | Optimised WebP images actually used by the pages (≈6.6 MB total, down from 35 MB). |
+| `src/assets/video/` | Home hero video (muted H.264, 30 fps, faststart, under 2 MB). Re-encode a new clip with `ffmpeg -i in.mp4 -an -r 30 -c:v libx264 -preset slow -crf 28 -pix_fmt yuv420p -movflags +faststart out.mp4`. |
 | `scripts/` | One-off tooling used during the port: `build-images.mjs` (originals → WebP), `extract-widgets.mjs`, `dump-content.mjs`, `css-for.mjs`, screenshot/compare helpers. |
 
 Originals for images live in `src/assets/img-src/` (git-ignored). Drop a new original there and run `node scripts/build-images.mjs` to produce the WebP.

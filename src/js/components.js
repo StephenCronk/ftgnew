@@ -51,7 +51,8 @@
   // Count-up numbers: <span data-count="1849">0</span>, shown with thousands separators
   function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
   var counters = document.querySelectorAll('[data-count]');
-  if (counters.length && 'IntersectionObserver' in window) {
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (counters.length && !still && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;

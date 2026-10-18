@@ -1,19 +1,46 @@
 (function () {
-  // Hero slider (fade, autoplay 8s, loop)
-  var track = document.querySelector('[data-slider]');
-  if (track) {
-    var slides = track.querySelectorAll('.hero__slide');
-    var i = 0, timer;
-    function go(n) { slides[i].classList.remove('is-active'); i = (n + slides.length) % slides.length; slides[i].classList.add('is-active'); }
-    function start() { timer = setInterval(function () { go(i + 1); }, 8000); }
-    document.querySelector('[data-slider-prev]').addEventListener('click', function () { go(i - 1); clearInterval(timer); start(); });
-    document.querySelector('[data-slider-next]').addEventListener('click', function () { go(i + 1); clearInterval(timer); start(); });
-    track.parentNode.addEventListener('mouseenter', function () { clearInterval(timer); });
-    track.parentNode.addEventListener('mouseleave', start);
-    start();
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var saveData = navigator.connection && navigator.connection.saveData;
+
+  // Hero video: only downloaded when motion is welcome and data saver is off; otherwise the poster stays.
+  var video = document.querySelector('[data-hero-video]');
+  var toggle = document.querySelector('[data-hero-toggle]');
+  if (video && !reduce && !saveData) {
+    var source = video.querySelector('source');
+    var userPaused = false;
+    source.src = source.getAttribute('data-src');
+    video.load();
+    function play() { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+    function sync() {
+      var paused = video.paused;
+      toggle.classList.toggle('is-paused', paused);
+      toggle.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
+    }
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+    toggle.hidden = false;
+    toggle.addEventListener('click', function () {
+      userPaused = !video.paused;
+      if (userPaused) video.pause(); else play();
+    });
+    play();
+    // Stop decoding while the hero is off screen.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) { if (!userPaused) play(); } else video.pause();
+      }).observe(video);
+    }
   }
 
-  // Instagram "Load More": all fetched posts are already in the grid, so send people to the profile.
-  var more = document.querySelector('[data-insta-more]');
-  if (more) more.addEventListener('click', function () { window.open('https://www.instagram.com/fillingthegapdental/', '_blank', 'noopener'); });
+  // Fade sections in as they scroll into view.
+  var items = document.querySelectorAll('[data-reveal]');
+  if (!reduce && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('reveal-on');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  }
 })();

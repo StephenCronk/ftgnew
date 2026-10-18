@@ -1,6 +1,8 @@
 [hidden] { display: none !important; }
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+/* Jump targets clear the sticky header. */
+[id], .anchor { scroll-margin-top: calc(var(--header-h) + 12px); }
 body { overflow-x: hidden; }
 body {
   margin: 0;

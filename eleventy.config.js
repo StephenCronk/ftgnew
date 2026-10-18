@@ -1,5 +1,6 @@
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets/img': 'assets/img' });
+  eleventyConfig.addPassthroughCopy({ 'src/assets/video': 'assets/video' });
   eleventyConfig.addPassthroughCopy({ 'src/css': 'css' });
   eleventyConfig.addPassthroughCopy({ 'src/js': 'js' });
   eleventyConfig.addPassthroughCopy({ 'src/static': '/' });

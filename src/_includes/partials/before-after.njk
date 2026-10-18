@@ -1,7 +1,7 @@
 {#- expects `pairs` (array of {before, after}) -#}
 <div class="ba-grid">
 {% for p in pairs %}
-  <div class="ba{% if p.hideTablet %} hide-tablet{% endif %}" data-ba>
+  <div class="ba{% if p.hideTablet and not showAll %} hide-tablet{% endif %}" data-ba>
     <div class="ba__before"><img src="{{ ('/assets/img/' + p.before) | url }}" alt="" loading="lazy"></div>
     <div class="ba__after"><img src="{{ ('/assets/img/' + p.after) | url }}" alt="" loading="lazy"></div>
     <div class="ba__divider"><span class="ba__handle" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M14.7 6.3 9 12l5.7 5.7 1.4-1.4L11.8 12l4.3-4.3z"/></svg><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="m9.3 6.3 5.7 5.7-5.7 5.7-1.4-1.4 4.3-4.3-4.3-4.3z"/></svg></span></div>

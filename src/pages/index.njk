@@ -5,133 +5,138 @@ permalink: /
 pageId: home
 pageCss: home
 pageJs: home
+headerOverlay: true
 ---
-<section class="hero" aria-label="Highlights">
-  <div class="hero__track" data-slider>
-    <div class="hero__slide is-active">
-      <img class="hero__img" src="{{ '/assets/img/Unknown.webp' | url }}" alt="Your Questions On The New CDCP, Answered." width="1024" height="572">
-      <div class="hero__desc">
-        <h2 class="hero__title">Your Questions On The New CDCP, Answered.</h2>
-        <div class="hero__text">
-          <p>Despite the CDCP, there are still Canadians who fall through the cracks.</p>
-          <p><a class="hero__btn" href="{{ '/#cdcphome' | url }}">Are You Eligible?</a></p>
-        </div>
+{%- set impact = widgets['support:4fcbf74d'].items -%}
+<section class="vhero" aria-labelledby="vhero-title">
+  <div class="vhero__media" aria-hidden="true">
+    <video class="vhero__video" muted loop playsinline preload="none" poster="{{ '/assets/img/hero-toronto-poster.webp' | url }}" data-hero-video>
+      <source data-src="{{ '/assets/video/hero-toronto.mp4' | url }}" type="video/mp4">
+    </video>
+  </div>
+  <div class="vhero__overlay" aria-hidden="true"></div>
+  <div class="vhero__content">
+    <h1 class="vhero__title rise" id="vhero-title" style="--d:60ms">Providing Dental Care for Canadians Without Coverage</h1>
+    <p class="vhero__lede rise" style="--d:180ms">Our Mission Is To Provide Affordable Dental Care To Torontonians With Nowhere Else To Turn</p>
+    <div class="vhero__actions rise" style="--d:300ms">
+      <a class="pill pill--cyan" href="{{ nav.donate.href | url }}">Donate</a>
+      <a class="pill pill--ghost" href="{{ '/volunteers/' | url }}">Volunteer</a>
+      <a class="pill pill--ghost" href="#cdcphome">Are You Eligible?</a>
+    </div>
+    <div class="vhero__impact rise" style="--d:420ms">
+      <p class="vhero__eyebrow">Our 2025 Impact</p>
+      <ul class="vhero__stats">
+        {%- for i in [0, 1, 5] %}{% set c = impact[i] %}
+        <li><span class="vhero__num">{{ c.prefix }}<span data-count="{{ c.n }}">{{ c.n | localeNumber }}</span></span><span class="vhero__label">{{ c.label }}</span></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+  <button class="vhero__toggle" type="button" data-hero-toggle aria-label="Pause background video" hidden>
+    <svg class="icon-pause" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7 5h3.5v14H7zm6.5 0H17v14h-3.5z"/></svg>
+    <svg class="icon-play" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+  </button>
+  <a class="vhero__cue" href="#mission"><span class="visually-hidden">Scroll to our mission</span></a>
+</section>
+
+<section class="intro" id="mission">
+  <div class="container intro__inner" data-reveal>
+    <img class="intro__logo" src="{{ '/assets/img/ftg-roundlogo.webp' | url }}" alt="" width="360" height="360" loading="lazy">
+    <p class="intro__text"><strong class="intro__label">Our Mission:</strong> We are a non-profit organization that uses existing community dental clinics in locations across the city to provide affordable urgent dental treatment to low-income adults and others facing barriers to care. Services are generously provided by volunteer dentists and hygienists.</p>
+  </div>
+</section>
+
+<section class="band band--navy lives">
+  <div class="container">
+    <header class="band__head" data-reveal>
+      <h2 class="band__title">How Our Volunteers Change Lives</h2>
+      <p class="band__note">*Slide center handle to show before &amp; after.</p>
+    </header>
+    {% set pairs = beforeAfter.home %}{% set showAll = true %}{% include "partials/before-after.njk" %}
+    <div class="lives__video" data-reveal>
+      <div class="video" data-video="So7V1yJE8Uo">
+        <button class="video__play" type="button" aria-label="Play video">
+          <img src="https://i.ytimg.com/vi/So7V1yJE8Uo/hqdefault.jpg" alt="" loading="lazy">
+          <span class="video__icon" aria-hidden="true"></span>
+        </button>
       </div>
     </div>
-    <div class="hero__slide">
-      <img class="hero__img" src="{{ '/assets/img/Unknown-2.webp' | url }}" alt="Providing Dental Care for Canadians Without Coverage" width="1024" height="572" loading="lazy">
-      <div class="hero__desc">
-        <h2 class="hero__title">Providing Dental Care for Canadians Without Coverage</h2>
-        <div class="hero__text"><p>Our Mission Is To Provide Affordable Dental Care To Torontonians With Nowhere Else To Turn</p></div>
-      </div>
-    </div>
-  </div>
-  <button class="hero__nav hero__nav--prev" type="button" data-slider-prev aria-label="Previous slide"><svg viewBox="0 0 36 36" width="36" height="36" aria-hidden="true"><circle cx="18" cy="18" r="16" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M20.5 10 12 18l8.5 8V21h5v-6h-5z"/></svg></button>
-  <button class="hero__nav hero__nav--next" type="button" data-slider-next aria-label="Next slide"><svg viewBox="0 0 36 36" width="36" height="36" aria-hidden="true"><circle cx="18" cy="18" r="16" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M15.5 10 24 18l-8.5 8V21h-5v-6h5z"/></svg></button>
-</section>
-
-<section class="mission container">
-  <div class="mission__logo"><img src="{{ '/assets/img/ftg-roundlogo.webp' | url }}" alt="" width="360" height="360"></div>
-  <div class="mission__text">
-    <p><strong class="mission__label">Our Mission:</strong> We are a non-profit organization that uses existing community dental clinics in locations across the city to provide affordable urgent dental treatment to low-income adults and others facing barriers to care. Services are generously provided by volunteer dentists and hygienists.</p>
   </div>
 </section>
 
-
-<section class="section lives">
+<section class="band band--light news">
   <div class="container">
-    <h2 class="lives__heading">How Our Volunteers Change Lives</h2>
-    <p class="lives__note">*Slide center handle to show before &amp; after.</p>
-    {% set pairs = beforeAfter.home %}{% include "partials/before-after.njk" %}
-  </div>
-  <div class="container"><hr class="divider divider--cyan lives__divider"></div>
-  <div class="container video-wrap">
-    <div class="video" data-video="So7V1yJE8Uo">
-      <button class="video__play" type="button" aria-label="Play video">
-        <img src="https://i.ytimg.com/vi/So7V1yJE8Uo/hqdefault.jpg" alt="" loading="lazy">
-        <span class="video__icon" aria-hidden="true"></span>
-      </button>
-    </div>
-  </div>
-</section>
-
-<section class="section section--light news">
-  <div class="container">
-    <h2 class="news__heading">Featured news in dentistry</h2>
-    <hr class="divider">
-    <div class="tabs news__tabs" data-tabs>
+    <header class="band__head" data-reveal>
+      <h2 class="band__title">Featured news in dentistry</h2>
+    </header>
+    <div class="tabs news__tabs" data-tabs data-reveal>
       <div class="tabs__list" role="tablist" aria-label="Featured news">
-        {% for n in news %}
-        <button class="tabs__tab{% if loop.first %} is-active{% endif %}" role="tab" id="news-tab-{{ loop.index }}" aria-controls="news-panel-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}">{{ n.title | safe }}</button>
-        {% endfor %}
+        {%- for n in news %}
+        <button class="tabs__tab{% if loop.first %} is-active{% endif %}" type="button" role="tab" id="news-tab-{{ loop.index }}" aria-controls="news-panel-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}">{{ n.title | safe }}</button>
+        {%- endfor %}
       </div>
       <div class="tabs__panels">
-        {% for n in news %}
+        {%- for n in news %}
         <div class="tabs__panel{% if loop.first %} is-active{% endif %}" role="tabpanel" id="news-panel-{{ loop.index }}" aria-labelledby="news-tab-{{ loop.index }}"{% if not loop.first %} hidden{% endif %}>{{ n.content | html | safe }}</div>
-        {% endfor %}
+        {%- endfor %}
       </div>
     </div>
-    <hr class="divider news__divider-bottom">
   </div>
 </section>
 
-<div class="anchor" id="cdcphome"></div>
-<section class="section section--light cdcp">
+<section class="band band--grey cdcp" id="cdcphome">
   <div class="container">
-    <h2 class="cdcp__heading">Do you know about the CDCP?</h2>
-    <div class="cdcp__cols">
-      <div class="cdcp__list-col">
-        <ul class="icon-list">
-          <li><span class="icon-list__icon"><svg viewBox="0 0 448 512" width="34" height="34" aria-hidden="true"><path fill="currentColor" d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"/><path fill="var(--light)" d="M304 352h-48v48h-64v-48h-48v-64h48v-48h64v48h48z" transform="translate(0 -20)"/></svg></span><span class="icon-list__text"><b>What the program provides: </b> Helps make essential oral healthcare more affordable for Canadian residents who lack access to employer or private dental insurance.</span></li>
-          <li><span class="icon-list__icon"><svg viewBox="0 0 512 512" width="34" height="34" aria-hidden="true"><path fill="currentColor" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM262.7 90c-54.5 0-89.3 23-116.5 63.8-3.5 5.3-2.4 12.4 2.7 16.3l34.7 26.3c5.2 3.9 12.6 3 16.7-2.1 17.9-22.7 30.1-35.8 57.3-35.8 20.4 0 45.7 13.1 45.7 33 0 15-12.4 22.7-32.5 34C247.1 238.5 216 254.9 216 296v4c0 6.6 5.4 12 12 12h56c6.6 0 12-5.4 12-12v-1.3c0-28.5 83.2-29.6 83.2-106.7 0-58-60.2-102-116.5-102zM256 338c-25.4 0-46 20.6-46 46 0 25.4 20.6 46 46 46s46-20.6 46-46c0-25.4-20.6-46-46-46z"/></svg></span><span class="icon-list__text"><b>Core Eligibility Requirements</b> To qualify, applicants must have an adjusted family net income of less than $90,000, be a Canadian resident for tax purposes, and have filed their tax return for the previous year.</span></li>
-          <li><span class="icon-list__icon"><svg viewBox="0 0 448 512" width="34" height="34" aria-hidden="true"><path fill="currentColor" d="M318.1 154l-9.4 7.6c-22.5-19.3-51.5-31.5-83.5-31.5C154 130.1 96 188.1 96 259.4c0 71.3 58 129.3 129.3 129.3 71.3 0 129.3-58 129.3-129.3 0-12.4-2.8-24.2-6-35.7l10.3-8.3c6.1-5 7.1-13.9 2.3-20-4.9-6.2-13.9-7.1-20.1-2.3zM224 365.4c-58.4 0-106-47.6-106-106s47.6-106 106-106c26.6 0 50.8 10 69.4 26.2l-62.5 50.5c-2.3-.5-4.5-.7-6.9-.7-18.4 0-33.3 14.9-33.3 33.3 0 18.4 14.9 33.3 33.3 33.3 18.4 0 33.3-14.9 33.3-33.3 0-5.2-1.3-10-3.4-14.4l52.3-42.3c6.6 13.4 10.3 28.2 10.3 44 .1 58.4-47.5 105.9-105.9 105.9zM224 0C100.3 0 0 100.3 0 224s100.3 224 224 224c38.4 0 74.5-9.7 106-26.7l-8-13c-28.9 15.6-61.9 24.4-97.1 24.4-115.5 0-209.4-93.9-209.4-209.4S109.4 14.6 224.9 14.6c115.5 0 209.4 93.9 209.4 209.4 0 35.2-8.8 68.2-24.4 97.1l13 8c17-31.5 26.7-67.6 26.7-106C448 100.3 347.7 0 224 0z" transform="translate(0 32)"/></svg></span><span class="icon-list__text"><b>Sliding Scale Coverage</b>. The program reimburses a percentage of established CDCP fees—ranging from 40% up to 100%—based on your household income bracket, though patients are responsible for any applicable co-payments or provider balance billing.</span></li>
-        </ul>
-        <div class="cdcp__btn-wrap"><a class="btn btn--sm" href="https://www.canada.ca/en/services/benefits/dental/dental-care-plan/apply.html">Check Eligibility</a></div>
-      </div>
-      <div class="cdcp__img-col">
+    <header class="band__head" data-reveal>
+      <h2 class="band__title">Do you know about the CDCP?</h2>
+    </header>
+    <div class="cdcp__grid">
+      <ul class="cdcp__cards">
+        <li class="cdcp__card" data-reveal><span class="cdcp__icon"><svg viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"/><path fill="var(--light)" d="M304 352h-48v48h-64v-48h-48v-64h48v-48h64v48h48z" transform="translate(0 -20)"/></svg></span><p><b>What the program provides: </b> Helps make essential oral healthcare more affordable for Canadian residents who lack access to employer or private dental insurance.</p></li>
+        <li class="cdcp__card" data-reveal><span class="cdcp__icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM262.7 90c-54.5 0-89.3 23-116.5 63.8-3.5 5.3-2.4 12.4 2.7 16.3l34.7 26.3c5.2 3.9 12.6 3 16.7-2.1 17.9-22.7 30.1-35.8 57.3-35.8 20.4 0 45.7 13.1 45.7 33 0 15-12.4 22.7-32.5 34C247.1 238.5 216 254.9 216 296v4c0 6.6 5.4 12 12 12h56c6.6 0 12-5.4 12-12v-1.3c0-28.5 83.2-29.6 83.2-106.7 0-58-60.2-102-116.5-102zM256 338c-25.4 0-46 20.6-46 46 0 25.4 20.6 46 46 46s46-20.6 46-46c0-25.4-20.6-46-46-46z"/></svg></span><p><b>Core Eligibility Requirements</b> To qualify, applicants must have an adjusted family net income of less than $90,000, be a Canadian resident for tax purposes, and have filed their tax return for the previous year.</p></li>
+        <li class="cdcp__card" data-reveal><span class="cdcp__icon"><svg viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M318.1 154l-9.4 7.6c-22.5-19.3-51.5-31.5-83.5-31.5C154 130.1 96 188.1 96 259.4c0 71.3 58 129.3 129.3 129.3 71.3 0 129.3-58 129.3-129.3 0-12.4-2.8-24.2-6-35.7l10.3-8.3c6.1-5 7.1-13.9 2.3-20-4.9-6.2-13.9-7.1-20.1-2.3zM224 365.4c-58.4 0-106-47.6-106-106s47.6-106 106-106c26.6 0 50.8 10 69.4 26.2l-62.5 50.5c-2.3-.5-4.5-.7-6.9-.7-18.4 0-33.3 14.9-33.3 33.3 0 18.4 14.9 33.3 33.3 33.3 18.4 0 33.3-14.9 33.3-33.3 0-5.2-1.3-10-3.4-14.4l52.3-42.3c6.6 13.4 10.3 28.2 10.3 44 .1 58.4-47.5 105.9-105.9 105.9zM224 0C100.3 0 0 100.3 0 224s100.3 224 224 224c38.4 0 74.5-9.7 106-26.7l-8-13c-28.9 15.6-61.9 24.4-97.1 24.4-115.5 0-209.4-93.9-209.4-209.4S109.4 14.6 224.9 14.6c115.5 0 209.4 93.9 209.4 209.4 0 35.2-8.8 68.2-24.4 97.1l13 8c17-31.5 26.7-67.6 26.7-106C448 100.3 347.7 0 224 0z" transform="translate(0 32)"/></svg></span><p><b>Sliding Scale Coverage</b>. The program reimburses a percentage of established CDCP fees—ranging from 40% up to 100%—based on your household income bracket, though patients are responsible for any applicable co-payments or provider balance billing.</p></li>
+      </ul>
+      <div class="cdcp__media" data-reveal>
         <img class="cdcp__img" src="{{ '/assets/img/waitingroom.webp' | url }}" alt="" width="1024" height="1024" loading="lazy">
+        <a class="pill pill--navy cdcp__cta" href="https://www.canada.ca/en/services/benefits/dental/dental-care-plan/apply.html">Check Eligibility</a>
       </div>
     </div>
-    <div class="cdcp__text">
-      <p><b>&nbsp;Many individuals may still fall through the cracks</b>, as the CDCP does not cover several vulnerable populations, including working low-income Canadians who do not file with the CRA, refugees, students, work-permit holders, and many temporary residents.</p>
+    <div class="cdcp__callout" data-reveal>
+      <p><b>Many individuals may still fall through the cracks</b>, as the CDCP does not cover several vulnerable populations, including working low-income Canadians who do not file with the CRA, refugees, students, work-permit holders, and many temporary residents.</p>
       <p>These groups will remain in critical need of care delivered by <b>Filling the Gap Dental Outreach</b>. By focusing our resources on those left behind, <b>we can achieve better outcomes</b>. Our organization plays a critical role in supporting these individuals, offering care that can transform lives and improve overall well-being for those with <b>nowhere else to turn</b>.</p>
-      <p><b>*Filling the Gap is not able to see patients who have CDCP coverage.</b> If you believe you are in need of urgent dental care and are unable to access care through the CDCP, please contact us for next steps.</p>
     </div>
-    <div class="cdcp__click"><a class="btn btn--sm btn--ghost-light" href="#">Click here</a></div>
-    <h4 class="cdcp__sub">The most vulnerable canadians still need your help.</h4>
+    <p class="cdcp__note" data-reveal><b>*Filling the Gap is not able to see patients who have CDCP coverage.</b> If you believe you are in need of urgent dental care and are unable to access care through the CDCP, please contact us for next steps.</p>
+  </div>
+  <div class="cdcp__statement">
+    <div class="container"><h3 class="cdcp__statement-text" data-reveal>The most vulnerable canadians still need your help.</h3></div>
   </div>
 </section>
 
-<section class="section insta">
+<section class="band band--navy insta">
   <div class="container">
-    <h2 class="insta__heading">stay in the loop</h2>
-    <div class="insta__header">
-      <a class="insta__avatar" href="{{ instagram.profile }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/instagram/avatar.webp' | url }}" alt="" width="60" height="60"></a>
-      <h3 class="insta__handle"><a href="{{ instagram.profile }}" target="_blank" rel="noopener">{{ instagram.handle }}</a></h3>
-    </div>
-    <div class="insta__grid" data-insta-grid>
-      {% for p in instagram.posts %}
-      <a class="insta__item" href="{{ p.href }}" target="_blank" rel="noopener" title="{{ p.caption | truncate(120) }}">
+    <header class="insta__head" data-reveal>
+      <div>
+        <h2 class="band__title">stay in the loop</h2>
+        <a class="insta__who" href="{{ instagram.profile }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/instagram/avatar.webp' | url }}" alt="" width="60" height="60" loading="lazy">@{{ instagram.handle }}</a>
+      </div>
+      <a class="pill pill--cyan" href="{{ instagram.profile }}" target="_blank" rel="noopener"><svg viewBox="0 0 448 512" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg> Follow on Instagram</a>
+    </header>
+    <div class="insta__grid">
+      {%- for p in instagram.posts %}
+      <a class="insta__item" href="{{ p.href }}" target="_blank" rel="noopener" title="{{ p.caption | truncate(120) }}" data-reveal>
         <img src="{{ ('/assets/img/' + p.src.replace('.jpg', '.webp')) | url }}" alt="{{ p.caption | truncate(120) }}" loading="lazy" width="640" height="640">
         {% if p.type == 'video' %}<span class="insta__badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></span>{% endif %}
       </a>
-      {% endfor %}
-    </div>
-    <div class="insta__actions">
-      <button class="insta__load" type="button" data-insta-more>Load More</button>
-      <a class="insta__follow" href="{{ instagram.profile }}" target="_blank" rel="noopener"><svg viewBox="0 0 448 512" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg> Follow on Instagram</a>
+      {%- endfor %}
     </div>
   </div>
 </section>
 
-<section class="promo-wrap container hide-tablet">
-  <a class="promo" href="{{ '/publication-2/' | url }}">
-    <div class="promo__bg" style="background-image:url('{{ '/assets/img/Gemini_Generated_Image_c36g3pc36g3pc36g-scaled.webp' | url }}')"></div>
-    <div class="promo__overlay"></div>
-    <div class="promo__content">
-      <h2 class="promo__title">ANNUAL</h2>
-      <h2 class="promo__title">REPORT</h2>
-    </div>
-  </a>
+<section class="promo-band">
+  <div class="container">
+    <a class="promo" href="{{ '/publication-2/' | url }}" data-reveal>
+      <img class="promo__bg" src="{{ '/assets/img/Gemini_Generated_Image_c36g3pc36g3pc36g-scaled.webp' | url }}" alt="" loading="lazy">
+      <h2 class="promo__title">Annual<br>Report</h2>
+      <span class="promo__go" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M13.2 5.3 19.9 12l-6.7 6.7-1.4-1.4 4.3-4.3H4v-2h12.1l-4.3-4.3z"/></svg></span>
+    </a>
+  </div>
 </section>
-<div class="home-bottom-space"></div>

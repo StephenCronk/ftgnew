@@ -1,4 +1,4 @@
-// Global behaviour: mobile menu, cookie bar. Page-specific scripts live in js/pages/.
+// Global behaviour: mobile menu, header scroll state, cookie bar. Page-specific scripts live in js/pages/.
 (function () {
   var toggle = document.querySelector('.site-header__toggle');
   var header = document.querySelector('.site-header');
@@ -7,6 +7,14 @@
       var open = header.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(open));
     });
+    // Shadow once the page moves; on Home this also turns the see-through header solid.
+    var scrolled = false;
+    function onScroll() {
+      var s = window.scrollY > 40;
+      if (s !== scrolled) { scrolled = s; header.classList.toggle('is-scrolled', s); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
 
   var bar = document.getElementById('cookie-bar');
