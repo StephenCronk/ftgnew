@@ -8,13 +8,13 @@
   --font-slab: 'Fraunces', Georgia, serif; --font-body: 'Nunito Sans', system-ui, sans-serif; --font-roboto: var(--font-body);
   --heading-weight: 600; --heading-tracking: -.01em; --radius: 18px;
 }
-:root[data-theme="evergreen"] {
-  --navy: #12483f; --ink: #0f3a35; --navy-deep: #0a2824; --cookie: #0a2824;
-  --cyan: #8ddcbf; --cyan-dark: #157a5d; --cyan-soft: #e0f3ea;
-  --light: #e3ece8; --surface: #ffffff; --surface-tint: #f3f8f5; --grey-bg: #f3f8f5;
-  --footer-text: #2d4a43; --text-muted: #4c6660;
-  --font-slab: 'Outfit', system-ui, sans-serif; --font-body: 'Inter', system-ui, sans-serif; --font-roboto: var(--font-body);
-  --heading-weight: 600; --heading-tracking: -.015em; --radius: 14px;
+:root[data-theme="coastal"] {
+  --navy: #173f66; --ink: #13406b; --navy-deep: #0c2c4c; --cookie: #0c2c4c;
+  --cyan: #ffab91; --cyan-dark: #b4472a; --cyan-soft: #fdeee8;
+  --light: #eee9e2; --surface: #ffffff; --surface-tint: #fbf8f4; --grey-bg: #fbf8f4;
+  --footer-text: #34465e; --text-muted: #5a6577;
+  --font-slab: 'Lora', Georgia, serif; --font-body: 'Nunito Sans', system-ui, sans-serif; --font-roboto: var(--font-body);
+  --heading-weight: 600; --heading-tracking: -.005em; --radius: 18px;
 }
 :root[data-theme="slate"] {
   --navy: #1c2b45; --ink: #18212c; --navy-deep: #10161f; --cookie: #10161f;
