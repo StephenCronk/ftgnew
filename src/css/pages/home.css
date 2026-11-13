@@ -13,7 +13,7 @@
 .vhero {
   position: relative; display: flex; align-items: flex-end; overflow: hidden;
   min-height: 100vh; min-height: 100svh;
-  background: var(--ink) url('../../assets/img/hero-volunteers-poster.webp') center / cover no-repeat;
+  background: var(--ink) url('../../assets/img/hero-volunteers3-poster.webp') center / cover no-repeat;
   color: #fff;
 }
 .vhero__media { position: absolute; inset: 0; }

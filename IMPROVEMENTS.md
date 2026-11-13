@@ -39,6 +39,7 @@ Phase 1 reproduces the live WordPress site as-is, including its mistakes. These 
 ## Done (November 2026, requested by the owner)
 - Home "fall through the cracks" list now says refugees without Interim Federal Health Program (IFHP) coverage and *some* students.
 - Income threshold stated as an adjusted family net income below $70,000 (matching CDCP's lower cut-off) on Home step 1 and the Services eligibility list, instead of "below the low-income threshold".
+- Home hero video replaced with the owner's `volunteers3.mp4` (re-encoded to 1.4 MB, its half-second fade in from black trimmed so the loop doesn't flash black); new poster `hero-volunteers3-poster.webp`. The old `hero-volunteers.mp4` and its poster were removed.
 
 ## Broken or odd links
 - **Home "CLICK HERE" button** in the CDCP section links to `#` (nowhere).
