@@ -36,6 +36,10 @@ Phase 1 reproduces the live WordPress site as-is, including its mistakes. These 
 - Home mission logo is now an animated SVG traced from the round logo PNG (`scripts/trace-logo.py`): when the whole logo is on screen it plays, then replays every 30 seconds (waiting until the logo is fully back in view if the visitor has scrolled away). The two figures and the arcs draw their outlines and fill in, the heart springs open, both heads drop in and bounce, "Filling the Gap" spins in letter by letter, "dental outreach" rises in, and the heart beats twice at the end (about 3.2 s; sped up 30% after the first preview). Visitors with reduced motion, or without JavaScript, see the finished logo. It keeps the brand white and cyan under every theme.
 - CSS and JS links carry a per-deploy version tag (`?v=` + commit hash), so browsers pick up style and script changes straight after a deploy instead of serving a cached copy for up to 10 minutes (Safari did).
 
+## Done (November 2026, requested by the owner)
+- Home "fall through the cracks" list now says refugees without Interim Federal Health Program (IFHP) coverage and *some* students.
+- Income threshold stated as an adjusted family net income below $70,000 (matching CDCP's lower cut-off) on Home step 1 and the Services eligibility list, instead of "below the low-income threshold".
+
 ## Broken or odd links
 - **Home "CLICK HERE" button** in the CDCP section links to `#` (nowhere).
 - **Sponsor logos link to the wrong sites** on Support Our Work: ROI Corp → Toronto Public Health; HANSAmed and Accerta → Think Property; Canadian Dental Labs and Sonident → HealthEquity; HDA Crown and Bridge → Toronto Foundation.
